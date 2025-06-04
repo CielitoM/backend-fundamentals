@@ -16,3 +16,20 @@ Implementación:
 - Replicación de bases de datos.
 - Uso de microservicios para dividir funcionalidades.
 - Caching distribuido para reducir carga en servidores.
+
+## 3. ¿Qué es un balanceador de carga y cómo ayuda a la escalabilidad?
+
+Un balanceador de carga distribuye automáticamente el tráfico entrante entre varios servidores para asegurar que ningún servidor se sobrecargue.
+
+### Beneficios:
+- Mejora la disponibilidad.
+- Aumenta la tolerancia a fallos.
+- Optimiza el uso de recursos.
+- Facilita la escalabilidad horizontal.
+
+### Tipos comunes:
+- **Round-robin:** Distribución secuencial.
+- **Least connections:** Al servidor con menos conexiones activas.
+- **IP Hash:** Asocia clientes a servidores según su IP.
+
+Usualmente se coloca al frente de múltiples instancias del backend.

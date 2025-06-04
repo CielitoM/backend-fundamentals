@@ -15,3 +15,24 @@ Una arquitectura de microservicios divide una aplicación en pequeños servicios
 
 - Mayor complejidad de infraestructura.
 - Comunicación entre servicios puede volverse más costosa y requiere diseño cuidadoso.
+
+## 2. ¿Cuáles son las diferencias entre una arquitectura monolítica y una de microservicios?
+
+### Monolítica:
+- Toda la aplicación es una sola unidad.
+- Simpler to deploy.
+- Más difícil de escalar por partes.
+
+### Microservicios:
+- Divide la aplicación en componentes independientes.
+- Cada componente tiene su propia lógica y base de datos.
+- Escalabilidad, mantenimiento y despliegue por separado.
+
+### Comparación:
+
+| Característica        | Monolítica               | Microservicios            |
+|-----------------------|--------------------------|----------------------------|
+| Escalabilidad         | Global                   | Por servicio               |
+| Complejidad inicial   | Baja                     | Alta                       |
+| Mantenimiento         | Difícil a gran escala    | Más fácil                  |
+| Aislamiento de fallos | Bajo                     | Alto                       |

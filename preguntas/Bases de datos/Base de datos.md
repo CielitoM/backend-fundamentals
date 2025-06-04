@@ -32,3 +32,19 @@ Ventajas:
 SELECT usuarios.nombre, pedidos.id
 FROM usuarios
 INNER JOIN pedidos ON usuarios.id = pedidos.usuario_id;
+```
+
+## 4. ¿Qué es la normalización y por qué es importante?
+
+La normalización es el proceso de organizar los datos en una base de datos para reducir la redundancia y mejorar la integridad de los datos.
+
+### Beneficios:
+- Elimina datos duplicados.
+- Mejora la consistencia.
+- Facilita el mantenimiento.
+- Mejora la eficiencia de almacenamiento.
+
+### Formas normales comunes:
+1. **Primera forma normal (1FN):** Elimina grupos repetitivos.
+2. **Segunda forma normal (2FN):** Elimina dependencias parciales.
+3. **Tercera forma normal (3FN):** Elimina dependencias transitivas.
