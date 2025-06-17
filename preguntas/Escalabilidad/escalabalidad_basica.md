@@ -33,3 +33,22 @@ Un balanceador de carga distribuye automáticamente el tráfico entrante entre v
 - **IP Hash:** Asocia clientes a servidores según su IP.
 
 Usualmente se coloca al frente de múltiples instancias del backend.
+
+## 4. ¿Por qué se utiliza un sistema de caché en una arquitectura backend?
+
+El caching permite guardar respuestas o resultados temporales de operaciones costosas (como consultas a bases de datos) para acelerar el acceso posterior.
+
+### Beneficios:
+- Reduce la carga sobre la base de datos.
+- Mejora el tiempo de respuesta.
+- Disminuye el costo computacional.
+
+### Tipos de caché:
+- **En memoria:** Redis, Memcached.
+- **HTTP Cache:** Varnish, headers como `Cache-Control`.
+- **Local en cliente o servidor.**
+
+### Ejemplo:
+Una API que devuelve productos populares puede usar caché para no hacer la misma consulta cada segundo.
+
+>  “Cachear lo que cambia poco, calcular lo que cambia mucho”.

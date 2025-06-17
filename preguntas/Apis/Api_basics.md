@@ -49,3 +49,17 @@ query {
 - **Throttling y rate limiting:** Controlan el uso excesivo de la API.
 
 Estas prácticas mejoran la eficiencia, reducen la latencia y escalan mejor bajo alta demanda.
+
+## 4. ¿Cuáles son las diferencias clave entre REST y SOAP?
+
+| Característica     | REST                              | SOAP                            |
+|--------------------|-----------------------------------|----------------------------------|
+| Estilo             | Arquitectura                      | Protocolo                        |
+| Formato de datos   | JSON (generalmente)               | XML solamente                    |
+| Simplicidad        | Simple, ligero                    | Complejo, más pesado             |
+| Transporte         | HTTP                              | HTTP, SMTP, más                  |
+| Velocidad          | Alta (más eficiente)              | Menor (más verboso)              |
+| Estándares         | No estrictos                      | Estrictos (WS-* standards)       |
+| Uso común          | APIs web modernas                 | Integraciones empresariales      |
+
+REST es preferido actualmente por ser más flexible y eficiente, especialmente en aplicaciones web modernas.

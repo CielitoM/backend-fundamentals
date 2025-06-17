@@ -48,3 +48,21 @@ La normalización es el proceso de organizar los datos en una base de datos para
 1. **Primera forma normal (1FN):** Elimina grupos repetitivos.
 2. **Segunda forma normal (2FN):** Elimina dependencias parciales.
 3. **Tercera forma normal (3FN):** Elimina dependencias transitivas.
+
+## 5. ¿Qué es un índice en una base de datos y cómo mejora el rendimiento?
+
+Un índice es una estructura auxiliar que permite realizar búsquedas más rápidas sobre una o varias columnas de una tabla.
+
+### Ventajas:
+- Acelera búsquedas (`SELECT`).
+- Mejora consultas con `WHERE`, `JOIN`, `ORDER BY`.
+
+### Desventajas:
+- Ocupa espacio adicional.
+- Ralentiza inserciones, actualizaciones y eliminaciones (`INSERT`, `UPDATE`, `DELETE`) porque el índice también debe actualizarse.
+
+### Ejemplo SQL:
+```sql
+CREATE INDEX idx_usuario_email ON usuarios(email);
+```
+Este índice mejora las búsquedas que filtran por email.
