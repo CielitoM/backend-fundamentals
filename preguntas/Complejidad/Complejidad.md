@@ -67,3 +67,31 @@ def busqueda_binaria(lista, objetivo):
             derecha = medio - 1
     return -1
 ```
+
+
+## 6. ¿Cuál es el impacto de la recursividad en la complejidad temporal?
+
+- La recursividad puede ser poderosa, pero también costosa si no se optimiza.
+- Muchas funciones recursivas tienen complejidad exponencial si recalculan subproblemas.
+
+### Ejemplo clásico: Fibonacci
+
+```python
+def fib(n):
+    if n <= 1:
+        return n
+    return fib(n - 1) + fib(n - 2)
+```
+
+Complejidad: O(2ⁿ) → ineficiente para valores grandes.
+
+Solución: memoización o programación dinámica
+```python
+def fib_dp(n):
+    memo = [0, 1]
+    for i in range(2, n+1):
+        memo.append(memo[i-1] + memo[i-2])
+    return memo[n]
+```
+
+Complejidad: O(n)

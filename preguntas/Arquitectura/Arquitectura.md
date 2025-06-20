@@ -36,3 +36,20 @@ Una arquitectura de microservicios divide una aplicación en pequeños servicios
 | Complejidad inicial   | Baja                     | Alta                       |
 | Mantenimiento         | Difícil a gran escala    | Más fácil                  |
 | Aislamiento de fallos | Bajo                     | Alto                       |
+
+## 3. ¿Qué significa que una API siga el estilo RESTful?
+
+Una API es RESTful si sigue los principios del estilo arquitectónico REST, como:
+
+- Uso de métodos HTTP correctos (GET, POST, PUT, DELETE).
+- URLs que representan recursos, no acciones (ej: `/usuarios/1`).
+- Stateless: cada request contiene toda la información necesaria.
+- Soporte para formatos estándar como JSON.
+- Uso de códigos de estado HTTP apropiados.
+
+### Ejemplo de buenas prácticas REST:
+
+- `GET /productos` → obtener todos los productos  
+- `POST /productos` → crear un nuevo producto  
+- `PUT /productos/5` → actualizar producto con ID 5  
+- `DELETE /productos/5` → eliminar producto con ID 5

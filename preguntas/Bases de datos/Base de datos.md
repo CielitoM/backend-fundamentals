@@ -66,3 +66,23 @@ Un índice es una estructura auxiliar que permite realizar búsquedas más rápi
 CREATE INDEX idx_usuario_email ON usuarios(email);
 ```
 Este índice mejora las búsquedas que filtran por email.
+
+## 6. ¿Cuál es la diferencia entre normalización y desnormalización?
+
+- **Normalización:**  
+  - Proceso de dividir una base de datos en tablas pequeñas para eliminar redundancias.
+  - Mejora la consistencia y el mantenimiento.
+  - Ej: separar `usuario` y `dirección` en dos tablas relacionadas.
+
+- **Desnormalización:**  
+  - Se agregan duplicados deliberadamente para mejorar rendimiento.
+  - Útil en lecturas frecuentes o sistemas analíticos.
+  - Ej: incluir la dirección directamente en la tabla de `pedidos`.
+
+### Comparación rápida:
+
+| Criterio        | Normalización       | Desnormalización     |
+|-----------------|---------------------|-----------------------|
+| Redundancia     | Mínima              | Aumentada             |
+| Consistencia    | Alta                | Potencialmente menor  |
+| Rendimiento     | Lecturas más lentas | Lecturas más rápidas  |
