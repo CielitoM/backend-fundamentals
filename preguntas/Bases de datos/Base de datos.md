@@ -86,3 +86,19 @@ Este índice mejora las búsquedas que filtran por email.
 | Redundancia     | Mínima              | Aumentada             |
 | Consistencia    | Alta                | Potencialmente menor  |
 | Rendimiento     | Lecturas más lentas | Lecturas más rápidas  |
+
+## 7. ¿Cuál es la diferencia entre una transacción y un bloqueo (lock) en una base de datos?
+
+- **Transacción:** Unidad lógica de trabajo que debe ser completa o no hacerse (ACID).
+- **Bloqueo:** Mecanismo para evitar que múltiples procesos accedan al mismo recurso de forma conflictiva.
+
+Una transacción puede implicar varios bloqueos internos. Por ejemplo, al actualizar filas, se bloquean temporalmente para evitar condiciones de carrera.
+
+### Ejemplo:
+
+```sql
+BEGIN;
+UPDATE cuentas SET saldo = saldo - 100 WHERE id = 1;
+UPDATE cuentas SET saldo = saldo + 100 WHERE id = 2;
+COMMIT;
+```
