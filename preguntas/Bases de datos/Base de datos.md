@@ -102,3 +102,4 @@ UPDATE cuentas SET saldo = saldo - 100 WHERE id = 1;
 UPDATE cuentas SET saldo = saldo + 100 WHERE id = 2;
 COMMIT;
 ```
+Esta operación se hace de forma atómica, y se aplican bloqueos hasta el commit.

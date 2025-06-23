@@ -52,3 +52,21 @@ El caching permite guardar respuestas o resultados temporales de operaciones cos
 Una API que devuelve productos populares puede usar caché para no hacer la misma consulta cada segundo.
 
 >  “Cachear lo que cambia poco, calcular lo que cambia mucho”.
+
+## 5. ¿Qué problemas pueden surgir al manejar múltiples peticiones concurrentes y cómo se mitigan?
+
+Problemas comunes:
+
+- **Condiciones de carrera:** dos procesos acceden al mismo recurso a la vez.
+- **Deadlocks:** dos procesos esperan recursos que el otro tiene.
+- **Contención:** acceso simultáneo a un recurso limita el rendimiento.
+
+### Estrategias para mitigarlos:
+
+- Uso de **bloqueos (locks)** y **transacciones** en bases de datos.
+- Uso de **colas de tareas** (ej: RabbitMQ) para procesar solicitudes en orden.
+- Implementar **rate limiting** y **reintentos con backoff**.
+- Diseñar servicios **idempotentes** y **stateless**.
+
+### Ejemplo:
+Una API bancaria debe evitar que dos transferencias simultáneas vacíen la misma cuenta sin control.

@@ -63,3 +63,22 @@ Estas prácticas mejoran la eficiencia, reducen la latencia y escalan mejor bajo
 | Uso común          | APIs web modernas                 | Integraciones empresariales      |
 
 REST es preferido actualmente por ser más flexible y eficiente, especialmente en aplicaciones web modernas.
+
+## 5. ¿Qué significa que una operación HTTP sea idempotente?
+
+Una operación es **idempotente** si aplicarla una o múltiples veces produce el mismo resultado final.
+
+### Métodos HTTP idempotentes:
+
+- `GET`: no modifica nada.
+- `PUT`: reemplaza un recurso; aplicar varias veces no cambia el efecto.
+- `DELETE`: eliminar el mismo recurso varias veces sigue dejándolo eliminado.
+
+`POST` **no es idempotente**, porque cada llamada puede crear un recurso nuevo.
+
+### Ejemplo:
+```http
+PUT /usuarios/123/email
+Body: { "email": "nuevo@mail.com" }
+```
+No importa si se envía una vez o cinco, el email termina siendo el mismo.

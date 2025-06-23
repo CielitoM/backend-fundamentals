@@ -53,3 +53,17 @@ Una API es RESTful si sigue los principios del estilo arquitectónico REST, como
 - `POST /productos` → crear un nuevo producto  
 - `PUT /productos/5` → actualizar producto con ID 5  
 - `DELETE /productos/5` → eliminar producto con ID 5
+
+## 4. ¿Qué significa que un sistema sea stateless y por qué es útil?
+
+- **Stateless:** Cada petición contiene toda la información necesaria. El servidor no recuerda peticiones anteriores.
+- **Stateful:** El servidor mantiene información de estado entre peticiones (como sesiones).
+
+### Ventajas del diseño stateless:
+
+- Escalabilidad: se pueden balancear peticiones entre múltiples servidores fácilmente.
+- Simplicidad: menos dependencia del servidor.
+- Tolerancia a fallos: más fácil de reiniciar sin perder contexto.
+
+### Ejemplo:
+Una API REST bien diseñada es stateless: cada `request` lleva el `token`, los datos y no requiere historial previo.

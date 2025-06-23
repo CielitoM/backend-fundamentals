@@ -95,3 +95,29 @@ def fib_dp(n):
 ```
 
 Complejidad: O(n)
+
+
+## 7. ¿Cuándo conviene usar una tabla hash (`dict`) en lugar de una lista?
+
+Usa un **diccionario (tabla hash)** cuando:
+
+- Necesitás búsquedas rápidas por clave → O(1) promedio.
+- Hay necesidad de acceder a elementos por identificador.
+
+Usa una **lista** cuando:
+
+- El orden importa o es secuencial.
+- Se necesita recorrer todos los elementos en orden.
+
+### Ejemplo:
+
+```python
+# Búsqueda en lista (O(n))
+for producto in productos:
+    if producto.id == 5:
+        return producto
+
+# Búsqueda en dict (O(1))
+productos_por_id = {p.id: p for p in productos}
+return productos_por_id[5]
+```
