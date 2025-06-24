@@ -67,3 +67,26 @@ Una API es RESTful si sigue los principios del estilo arquitectónico REST, como
 
 ### Ejemplo:
 Una API REST bien diseñada es stateless: cada `request` lleva el `token`, los datos y no requiere historial previo.
+
+## 5. ¿Cuáles son las capas típicas de una arquitectura backend bien estructurada?
+
+Una arquitectura backend suele dividirse en capas para mejorar la organización y la mantenibilidad.
+
+### Capas típicas:
+
+1. **Capa de presentación** (opcional en backend puro): API, controllers.
+2. **Capa de negocio (servicio):** lógica principal, validaciones.
+3. **Capa de acceso a datos (DAO o repositorio):** interacción con la base de datos.
+4. **Capa de persistencia:** base de datos o sistema de archivos.
+
+Este diseño promueve separación de responsabilidades y testeo modular.
+
+### Ejemplo de estructura:
+
+```bash
+/backend
+├── controllers/
+├── services/
+├── repositories/
+└── models/
+```

@@ -82,3 +82,18 @@ PUT /usuarios/123/email
 Body: { "email": "nuevo@mail.com" }
 ```
 No importa si se envía una vez o cinco, el email termina siendo el mismo.
+
+## 6. ¿Cuáles son los principales códigos de estado HTTP que deberías manejar en una API?
+
+| Código | Significado                  | Uso común                             |
+|--------|------------------------------|----------------------------------------|
+| 200    | OK                           | Respuesta exitosa                      |
+| 201    | Created                      | Recurso creado exitosamente            |
+| 204    | No Content                   | Respuesta sin contenido (ej: DELETE)   |
+| 400    | Bad Request                  | Error en los datos enviados            |
+| 401    | Unauthorized                 | Falta autenticación                    |
+| 403    | Forbidden                    | Usuario autenticado pero sin permisos |
+| 404    | Not Found                    | Recurso no existe                      |
+| 500    | Internal Server Error        | Error inesperado del servidor          |
+
+Usar correctamente los códigos mejora la comprensión del cliente sobre el estado de su solicitud.

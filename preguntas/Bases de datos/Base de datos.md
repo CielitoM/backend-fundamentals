@@ -103,3 +103,21 @@ UPDATE cuentas SET saldo = saldo + 100 WHERE id = 2;
 COMMIT;
 ```
 Esta operación se hace de forma atómica, y se aplican bloqueos hasta el commit.
+
+## 8. ¿Qué ventajas y desventajas tiene usar un ORM en lugar de SQL directo?
+
+**ORM (Object-Relational Mapping)** permite manipular bases de datos usando objetos en el lenguaje de programación.
+
+### Ventajas:
+- Abstracción del acceso a datos.
+- Menor código repetitivo (boilerplate).
+- Facilita mantenimiento y portabilidad.
+
+### Desventajas:
+- Menor control sobre consultas complejas.
+- Puede generar consultas ineficientes si no se revisa.
+- Curva de aprendizaje en algunos casos.
+
+**SQL directo** es más flexible y controlado, pero más detallado y manual.
+
+> En proyectos grandes, se suelen usar ambos enfoques según el caso.

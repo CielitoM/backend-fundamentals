@@ -121,3 +121,30 @@ for producto in productos:
 productos_por_id = {p.id: p for p in productos}
 return productos_por_id[5]
 ```
+
+
+## 8. ¿Qué complejidad tienen las funciones `map`, `filter` y `reduce` en listas?
+
+Todas estas funciones recorren la lista **una sola vez**, por lo que tienen complejidad **O(n)**.
+
+- `map`: aplica una función a cada elemento → O(n)
+- `filter`: evalúa una condición sobre cada elemento → O(n)
+- `reduce`: combina elementos usando una operación acumulativa → O(n)
+
+### Ejemplo en Python:
+```python
+nombres = ["Ana", "Luis", "Carlos"]
+
+# map
+mayusculas = list(map(str.upper, nombres))
+
+# filter
+largos = list(filter(lambda x: len(x) > 3, nombres))
+
+# reduce
+from functools import reduce
+total_letras = reduce(lambda acc, x: acc + len(x), nombres, 0)
+```
+
+Nota:
+Aunque O(n), estas funciones son muy eficientes porque están optimizadas internamente.

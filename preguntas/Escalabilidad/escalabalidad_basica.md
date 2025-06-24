@@ -70,3 +70,25 @@ Problemas comunes:
 
 ### Ejemplo:
 Una API bancaria debe evitar que dos transferencias simultáneas vacíen la misma cuenta sin control.
+
+## 6. ¿Cómo se puede escalar un servicio stateless usando caching?
+
+Un servicio stateless no mantiene información entre peticiones, lo que facilita su escalabilidad horizontal. Para mejorar rendimiento aún más, se puede usar caché.
+
+### Ejemplo:
+- El backend es stateless (no guarda sesión).
+- Se agrega una capa de cache (como Redis) para almacenar resultados de consultas frecuentes.
+
+### Ventajas:
+- El backend puede replicarse en múltiples servidores.
+- La caché reduce carga en base de datos y mejora velocidad.
+- Ideal para sistemas distribuidos y APIs públicas.
+
+### Ilustración:
+
+```plaintext
+[Cliente] → [Balanceador] → [Instancia A] ↘
+                              [Redis Cache] → [Base de Datos]
+                           ↗ [Instancia B]
+```
+-falta agregar ilusitración-
