@@ -121,3 +121,31 @@ Esta operación se hace de forma atómica, y se aplican bloqueos hasta el commit
 **SQL directo** es más flexible y controlado, pero más detallado y manual.
 
 > En proyectos grandes, se suelen usar ambos enfoques según el caso.
+
+
+## 9. ¿Qué es el problema N+1 y cómo se soluciona?
+
+El **problema N+1** ocurre cuando, al obtener una lista de entidades, se realiza una consulta adicional por cada una para acceder a sus datos relacionados.
+
+### Ejemplo típico (ORM mal usado):
+
+```python
+# Se obtienen todos los usuarios
+usuarios = Usuario.query.all()
+
+# Por cada usuario, se consulta su perfil (1 consulta adicional por usuario)
+for usuario in usuarios:
+    print(usuario.perfil.nombre)
+```
+Si hay 100 usuarios → 1 consulta para usuarios + 100 para perfiles → 101 consultas.
+
+### Solución:
+
+Usar carga anticipada (eager loading) o JOIN para traer los datos relacionados de una vez.
+
+Ejemplo en SQLAlchemy:
+
+```SQLAlchemy
+usuarios = Usuario.query.options(joinedload(Usuario.perfil)).all()
+```
+Esto hace una sola consulta con JOIN y evita el problema.
