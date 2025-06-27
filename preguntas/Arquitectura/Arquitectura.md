@@ -90,3 +90,29 @@ Este diseño promueve separación de responsabilidades y testeo modular.
 ├── repositories/
 └── models/
 ```
+
+## 6. ¿Qué es el patrón CQRS y cuándo conviene usarlo?
+
+**CQRS (Command Query Responsibility Segregation)** es un patrón arquitectónico que **separa las operaciones de lectura (Query)** de las **operaciones de escritura (Command)**.
+
+### ¿Cómo funciona?
+
+- Se usan **modelos distintos** para leer y para escribir datos.
+- Esto permite optimizar cada parte por separado.
+
+### Ejemplo:
+
+- **Command:** `POST /ordenes` → escribe una nueva orden.
+- **Query:** `GET /ordenes/por-cliente/5` → lee las órdenes del cliente 5.
+
+### Beneficios:
+- Escalabilidad independiente para lectura y escritura.
+- Menor acoplamiento.
+- Permite adaptar diferentes bases de datos o tecnologías por tipo de operación.
+
+### ¿Cuándo usarlo?
+
+- En sistemas con alto tráfico y diferencias marcadas entre consultas y escrituras.
+- En aplicaciones que usan event sourcing o microservicios.
+
+> CQRS no es necesario en todos los proyectos, pero es muy útil en sistemas grandes y críticos.
