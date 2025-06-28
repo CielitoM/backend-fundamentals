@@ -149,3 +149,28 @@ Ejemplo en SQLAlchemy:
 usuarios = Usuario.query.options(joinedload(Usuario.perfil)).all()
 ```
 Esto hace una sola consulta con JOIN y evita el problema.
+
+
+## 10. ¿Cuáles son los principales tipos de JOIN en SQL y en qué casos se usan?
+
+Un **JOIN** se usa para combinar filas de dos o más tablas basándose en una condición relacionada entre ellas (generalmente claves foráneas).
+
+### Tipos principales:
+
+| Tipo de JOIN   | Descripción                                               | Ejemplo común                      |
+|----------------|-----------------------------------------------------------|------------------------------------|
+| **INNER JOIN** | Devuelve solo las filas que coinciden en ambas tablas     | Usuarios con pedidos               |
+| **LEFT JOIN**  | Devuelve todas las filas de la tabla izquierda y sus coincidencias (si existen) en la derecha | Todos los usuarios y sus pedidos (aunque no tengan) |
+| **RIGHT JOIN** | Similar a LEFT JOIN pero al revés                         | Pedidos y sus usuarios (aunque no registrados) |
+| **FULL JOIN**  | Devuelve todas las filas que tengan coincidencia en una u otra tabla | Unión completa de ambas tablas     |
+
+### Ejemplo con LEFT JOIN:
+```sql
+SELECT u.nombre, p.id_pedido
+FROM usuarios u
+LEFT JOIN pedidos p ON u.id = p.id_usuario;
+```
+
+Esto muestra a todos los usuarios, tengan o no pedidos.
+
+Elegir el JOIN adecuado evita errores lógicos  y mejora el rendimiento de la consulta.
