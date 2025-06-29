@@ -136,3 +136,26 @@ app.get("/usuarios/:id", async (req, res) => {
 ```
 Nota:
 El manejo adecuado de errores mejora la experiencia del cliente y facilita el mantenimiento.
+
+
+## 8. ¿Por qué es importante versionar una API y cuáles son las formas comunes de hacerlo?
+
+El **versionado** permite hacer cambios en una API (como modificar o eliminar campos) sin afectar a los clientes que dependen de versiones anteriores.
+
+### ¿Por qué es importante?
+- Permite mantener compatibilidad con clientes antiguos.
+- Facilita introducir mejoras o cambios estructurales progresivamente.
+- Reduce el riesgo de romper integraciones en producción.
+
+### Formas comunes de versionar una API:
+
+| Estrategia         | Ejemplo                       | Comentario                         |
+|--------------------|-------------------------------|------------------------------------|
+| En la URL          | `/api/v1/usuarios`            | Muy usada, clara y visible         |
+| En el header       | `Accept: application/vnd.miapi.v1+json` | Más limpio, pero menos visible     |
+| En el parámetro    | `/usuarios?version=1`         | Simple, pero menos recomendable    |
+
+### Buenas prácticas:
+- Documentar claramente los cambios entre versiones.
+- Mantener versiones antiguas mientras haya clientes activos.
+- Evitar romper cambios en versiones activas sin previo aviso.
