@@ -148,3 +148,26 @@ total_letras = reduce(lambda acc, x: acc + len(x), nombres, 0)
 
 Nota:
 Aunque O(n), estas funciones son muy eficientes porque están optimizadas internamente.
+
+
+## 9. ¿Qué prefieres entre un algoritmo O(n log n) y uno O(n²), y por qué?
+
+En general, un algoritmo **O(n log n)** es más eficiente que uno **O(n²)**, especialmente cuando `n` (el tamaño de la entrada) es grande.
+
+### Comparación práctica:
+
+| n     | n log n (base 2) | n²     |
+|-------|------------------|--------|
+| 10    | ~33              | 100    |
+| 100   | ~664             | 10,000 |
+| 1,000 | ~9,966           | 1,000,000 |
+
+→ A medida que `n` crece, la diferencia se vuelve enorme.
+
+### Ejemplo real:
+- O(n²): burbuja, selección, inserción (ordenamiento lentos).
+- O(n log n): mergesort, heapsort (ordenamiento eficientes).
+
+> 🔍 Incluso si O(n²) puede ser más simple de implementar, **en producción se prioriza la eficiencia y escalabilidad**.
+
+Siempre que sea posible, **prefiere algoritmos con mejor complejidad asintótica**, especialmente en sistemas con muchos datos o usuarios concurrentes.
