@@ -92,3 +92,34 @@ Un servicio stateless no mantiene información entre peticiones, lo que facilita
                            ↗ [Instancia B]
 ```
 -falta agregar ilusitración-
+
+
+## 7. ¿Qué es un balanceador de carga y cómo ayuda a la escalabilidad de un sistema?
+
+Un **balanceador de carga** (load balancer) es un componente que distribuye automáticamente el tráfico entrante entre múltiples servidores disponibles.
+
+### ¿Por qué es importante?
+- Mejora la **disponibilidad**: si un servidor falla, el tráfico se redirige a otro.
+- Aumenta la **escalabilidad horizontal**: puedes agregar más servidores para manejar mayor carga.
+- Optimiza el uso de recursos: evita que un servidor se sobrecargue mientras otros están ociosos.
+
+### Tipos comunes:
+- **Round-robin**: distribuye de forma circular.
+- **Least connections**: al servidor con menos conexiones activas.
+- **IP hash**: asigna según IP del cliente (útil para mantener sesión).
+
+### Ilustración:
+
+```plaintext
+[Clientes] → [Balanceador de carga] → [Servidor A]
+                                 ↘→ [Servidor B]
+                                 ↘→ [Servidor C]
+```
+-falta agregar ilusitración-
+
+Herramientas populares:
+
+NGINX, HAProxy, AWS ELB, Traefik.
+
+> El balanceo de carga es clave para crear aplicaciones tolerantes a fallos y escalables.
+
