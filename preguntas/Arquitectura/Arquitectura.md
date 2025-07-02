@@ -116,3 +116,31 @@ Este diseño promueve separación de responsabilidades y testeo modular.
 - En aplicaciones que usan event sourcing o microservicios.
 
 > CQRS no es necesario en todos los proyectos, pero es muy útil en sistemas grandes y críticos.
+
+
+
+## 7. ¿Cuál es la diferencia entre una arquitectura monolítica y una basada en microservicios?
+
+| Característica       | Monolito                          | Microservicios                        |
+|----------------------|-----------------------------------|----------------------------------------|
+| Estructura           | Una sola aplicación unificada     | Múltiples servicios independientes     |
+| Despliegue           | Se despliega todo junto           | Se despliega cada servicio por separado |
+| Escalabilidad        | Escalabilidad global              | Escalabilidad por componente           |
+| Fallos               | Un fallo puede afectar todo       | Fallos aislados                        |
+| Comunicación         | Interna (funciones, módulos)      | API (HTTP, mensajería, etc.)          |
+| Complejidad inicial  | Menor                             | Mayor (requiere más infraestructura)   |
+
+### Ventajas del monolito:
+- Simplicidad inicial
+- Más fácil de desarrollar y depurar al principio
+
+### Ventajas de microservicios:
+- Flexibilidad tecnológica (cada servicio puede tener su stack)
+- Escalabilidad independiente
+- Mejor aislamiento de fallos
+
+### ¿Cuándo usar cada uno?
+- Monolito: proyectos pequeños o etapas tempranas.
+- Microservicios: sistemas grandes, equipos distribuidos, necesidades de alta escalabilidad.
+
+> Una buena práctica es **comenzar con un monolito bien estructurado** que permita migrar a microservicios si el proyecto crece.
