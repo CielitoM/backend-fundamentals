@@ -144,3 +144,48 @@ Este diseño promueve separación de responsabilidades y testeo modular.
 - Microservicios: sistemas grandes, equipos distribuidos, necesidades de alta escalabilidad.
 
 > Una buena práctica es **comenzar con un monolito bien estructurado** que permita migrar a microservicios si el proyecto crece.
+
+
+## 8. ¿Qué es una arquitectura orientada a eventos y cuándo se recomienda usarla?
+
+Una **arquitectura orientada a eventos (event-driven architecture)** es un enfoque donde los componentes del sistema se comunican y reaccionan a eventos.
+
+### Conceptos clave:
+
+- **Evento**: una acción o cambio de estado ("pedido creado", "usuario registrado").
+- **Emisor (publisher)**: componente que genera el evento.
+- **Suscriptor (subscriber)**: componente que reacciona al evento.
+- **Bus de eventos o cola**: canal que transporta los eventos (ej: Kafka, RabbitMQ).
+
+### Ventajas:
+- **Desacoplamiento**: los componentes no necesitan conocerse entre sí.
+- **Escalabilidad**: cada servicio puede escalar independientemente.
+- **Asincronía**: ideal para procesos que no necesitan respuesta inmediata.
+
+### Ejemplo:
+1. Un usuario hace una compra.
+2. Se emite el evento `CompraRealizada`.
+3. Otros servicios lo procesan:
+   - Notificaciones envía un email.
+   - Inventario descuenta productos.
+   - Facturación genera la factura.
+
+```plaintext
+[Compra] → (Evento) → [Cola de eventos]
+                          ↙        ↘
+                [Notificaciones] [Inventario]
+                          ↘        ↘
+                      [Facturación] ...
+```
+
+### ¿Cuándo usarla?
+
+En sistemas distribuidos o microservicios.
+
+Cuando hay tareas desacopladas, asincrónicas o extensibles.
+
+Cuando se necesita alta disponibilidad y flexibilidad.
+
+
+> Pensar en eventos permite construir sistemas más modulares, adaptables y preparados para crecer.
+
