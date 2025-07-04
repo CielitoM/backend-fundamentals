@@ -189,3 +189,33 @@ Cuando se necesita alta disponibilidad y flexibilidad.
 
 > Pensar en eventos permite construir sistemas más modulares, adaptables y preparados para crecer.
 
+
+## 9. ¿Qué es Domain-Driven Design (DDD) y por qué es importante en arquitectura de software?
+
+**Domain-Driven Design (DDD)** es un enfoque de diseño de software centrado en el **modelo del dominio** y en la **colaboración cercana con expertos del negocio** para construir software alineado con la realidad del problema.
+
+### Principios clave:
+
+- **Modelo de dominio:** representación precisa del negocio dentro del código.
+- **Lenguaje ubicuo (Ubiquitous Language):** vocabulario compartido entre desarrolladores y expertos del dominio.
+- **Separación de capas:** presentación, aplicación, dominio, infraestructura.
+- **Contexto delimitado (Bounded Context):** una parte clara y autónoma del sistema donde un modelo es válido.
+
+### Beneficios:
+- El software refleja fielmente la lógica del negocio.
+- Mejora la comunicación entre equipos técnicos y no técnicos.
+- Favorece el diseño modular, especialmente útil en microservicios.
+
+### Ejemplo de capas:
+```plaintext
+[Presentación] → [Aplicación] → [Dominio] → [Infraestructura]
+```
+
+¿Cuándo aplicar DDD?
+
+En sistemas complejos con mucha lógica de negocio.
+
+Cuando el entendimiento del dominio es crítico para el éxito del proyecto.
+
+
+> DDD no es solo técnica: es colaboración constante con el negocio para construir software realmente útil y sostenible.
