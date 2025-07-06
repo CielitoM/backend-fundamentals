@@ -159,3 +159,39 @@ El **versionado** permite hacer cambios en una API (como modificar o eliminar ca
 - Documentar claramente los cambios entre versiones.
 - Mantener versiones antiguas mientras haya clientes activos.
 - Evitar romper cambios en versiones activas sin previo aviso.
+
+
+## 9. ¿Qué es el rate limiting y por qué es importante en una API?
+
+**Rate limiting** es una técnica que restringe la cantidad de peticiones que un cliente puede hacer a una API en un período de tiempo determinado.
+
+### ¿Por qué es importante?
+
+- **Protege contra abusos** (ej: ataques DDoS o bots).
+- **Preserva recursos** del servidor.
+- **Garantiza disponibilidad** para todos los usuarios.
+- **Controla costos** en servicios de terceros (como APIs pagas por uso).
+
+### Ejemplo de regla:
+> “Máximo 100 solicitudes por minuto por IP”
+
+### Métodos comunes de implementación:
+
+- **Token Bucket**
+- **Leaky Bucket**
+- **Fixed Window**
+- **Sliding Window**
+
+### Herramientas y prácticas:
+- Middleware (ej: `express-rate-limit` en Node.js)
+- Gateways como NGINX, Kong, Amazon API Gateway
+
+### Ejemplo de respuesta con limitación:
+```http
+HTTP/1.1 429 Too Many Requests
+Retry-After: 60
+{
+  "error": "Rate limit exceeded. Try again in 60 seconds."
+}
+```
+El rate limiting es esencial en APIs públicas o de alto tráfico.
