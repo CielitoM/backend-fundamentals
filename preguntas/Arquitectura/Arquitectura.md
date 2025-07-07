@@ -219,3 +219,44 @@ Cuando el entendimiento del dominio es crítico para el éxito del proyecto.
 
 
 > DDD no es solo técnica: es colaboración constante con el negocio para construir software realmente útil y sostenible.
+
+## 10. ¿Qué es el patrón MVC y cómo se aplica en el desarrollo backend?
+
+**MVC (Model-View-Controller)** es un patrón de arquitectura que separa una aplicación en tres componentes principales:
+
+| Componente | Responsabilidad                                 |
+|------------|--------------------------------------------------|
+| **Model**  | La lógica del negocio y acceso a datos          |
+| **View**   | La presentación o salida (en backend, a veces es JSON) |
+| **Controller** | Intermediario que recibe solicitudes, ejecuta lógica y entrega respuestas |
+
+### Aplicación en backend:
+
+En un backend web típico, por ejemplo usando Django, Laravel o Express:
+
+- El **Controlador** gestiona las rutas y recibe las solicitudes HTTP.
+- El **Modelo** se conecta a la base de datos.
+- La **Vista** puede ser una plantilla HTML o una respuesta JSON.
+
+### Ejemplo (pseudocódigo):
+
+```python
+# Controller
+@app.route("/usuarios/<id>")
+def obtener_usuario(id):
+    usuario = UsuarioModel.obtener(id)  # Modelo
+    return jsonify(usuario.to_dict())   # Vista (JSON)
+```
+
+###Ventajas:
+
+Separación clara de responsabilidades.
+
+Facilita el mantenimiento, testeo y escalabilidad.
+
+Reutilización del modelo en diferentes vistas (web, móvil, etc.)
+
+
+> MVC es uno de los patrones más usados en backend por su simplicidad y organización clara.
+
+
