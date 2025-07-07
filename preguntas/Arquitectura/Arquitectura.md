@@ -248,7 +248,7 @@ def obtener_usuario(id):
     return jsonify(usuario.to_dict())   # Vista (JSON)
 ```
 
-###Ventajas:
+### Ventajas:
 
 Separación clara de responsabilidades.
 
