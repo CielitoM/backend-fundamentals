@@ -174,3 +174,35 @@ LEFT JOIN pedidos p ON u.id = p.id_usuario;
 Esto muestra a todos los usuarios, tengan o no pedidos.
 
 Elegir el JOIN adecuado evita errores lógicos  y mejora el rendimiento de la consulta.
+
+## 11. ¿Qué es un índice en una base de datos y cuáles son sus ventajas y desventajas?
+
+Un **índice** es una estructura de datos adicional que permite acelerar la búsqueda de registros en una tabla, de forma similar a un índice en un libro.
+
+### Ventajas:
+- **Acelera las consultas** `SELECT`, especialmente en columnas con filtros (`WHERE`, `JOIN`, `ORDER BY`, etc.).
+- Mejora el rendimiento de búsquedas y relaciones entre tablas.
+
+### Desventajas:
+- **Ocupa espacio adicional** en disco.
+- **Ralentiza las operaciones de escritura** (`INSERT`, `UPDATE`, `DELETE`), ya que el índice también debe actualizarse.
+
+### Tipos comunes de índices:
+- **Índice único:** no permite valores repetidos.
+- **Índice compuesto:** usa varias columnas.
+- **Índice de texto completo:** útil para búsqueda de palabras o frases.
+
+### Ejemplo SQL:
+```sql
+CREATE INDEX idx_nombre ON usuarios(nombre);
+```
+
+### Buenas prácticas:
+
+Indexar columnas usadas frecuentemente en filtros o joins.
+
+No indexar todo: muchos índices pueden perjudicar el rendimiento general.
+
+> El uso de índices debe balancear velocidad de lectura y costo de mantenimiento en escritura.
+
+
