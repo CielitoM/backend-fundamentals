@@ -260,3 +260,36 @@ Reutilización del modelo en diferentes vistas (web, móvil, etc.)
 > MVC es uno de los patrones más usados en backend por su simplicidad y organización clara.
 
 
+## 11. ¿Qué es la Clean Architecture y qué ventajas ofrece en el desarrollo de aplicaciones backend?
+
+**Clean Architecture** es un enfoque de diseño de software propuesto por Robert C. Martin (Uncle Bob) que busca lograr sistemas **independientes del framework, la base de datos o la interfaz de usuario**, promoviendo la separación de responsabilidades en capas bien definidas.
+
+### Capas principales (de adentro hacia afuera):
+
+1. **Entidad (Entities):** lógica de negocio y reglas empresariales.
+2. **Casos de uso (Use Cases):** lógica específica de aplicación.
+3. **Interfaces (Interface Adapters):** controladores, gateways, serializadores.
+4. **Infraestructura (Frameworks & Drivers):** base de datos, HTTP, etc.
+
+```plaintext
+[Framework] → [Interfaces] → [Casos de Uso] → [Entidades]
+```
+
+### Ventajas:
+
+Bajo acoplamiento y alta cohesión.
+
+Facilidad de testeo (capas internas pueden probarse sin base de datos).
+
+Sustituibilidad: puedes cambiar el motor de base de datos o framework sin reescribir la lógica de negocio.
+
+Longevidad del código: las reglas del negocio no dependen de tecnologías externas.
+
+
+### Ejemplo:
+
+En una API, el controlador HTTP no contiene lógica de negocio. Solo delega a un caso de uso, que luego usa un repositorio para obtener los datos.
+
+> Clean Architecture permite construir sistemas mantenibles, testeables y resistentes al paso del tiempo.
+
+
