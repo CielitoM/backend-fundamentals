@@ -292,4 +292,46 @@ En una API, el controlador HTTP no contiene lógica de negocio. Solo delega a un
 
 > Clean Architecture permite construir sistemas mantenibles, testeables y resistentes al paso del tiempo.
 
+## 12 ¿Qué es la Arquitectura Hexagonal y cuál es su propósito?
 
+La **Arquitectura Hexagonal** (también llamada **Ports and Adapters**) es un enfoque que busca aislar la lógica del dominio central de las dependencias externas, como bases de datos, servicios web, interfaces gráficas, etc.
+
+### Componentes clave:
+
+- **Dominio central:** contiene la lógica de negocio pura.
+- **Puertos (Ports):** interfaces que definen cómo interactuar con el dominio.
+- **Adaptadores (Adapters):** implementaciones concretas que conectan los puertos con tecnologías externas (HTTP, DB, etc.).
+
+```plaintext
+            ┌───────────────────────────────┐
+            │        Interfaces             │
+            │  (HTTP, DB, CLI, etc.)        │
+            └──────┬────────────┬───────────┘
+                   │            │
+             ┌─────▼────┐  ┌────▼────┐
+             │ Adapter  │  │ Adapter │
+             └─────┬────┘  └────┬────┘
+                   ▼            ▼
+                ┌───────────────────┐
+                │      Port         │
+                └────────┬──────────┘
+                         ▼
+                ┌───────────────────┐
+                │   Application     │
+                └───────────────────┘
+```
+
+### Ventajas:
+
+Aislamiento de lógica de negocio.
+
+Alta testabilidad (el núcleo no depende de infraestructura).
+
+Flexibilidad: puedes cambiar adaptadores sin tocar el núcleo.
+
+
+### Ejemplo:
+
+Puedes cambiar PostgreSQL por MongoDB sin alterar tu lógica de negocio, solo reemplazando el adaptador correspondiente.
+
+> Esta arquitectura promueve sistemas desacoplados, resistentes al cambio y fácilmente extensibles.
