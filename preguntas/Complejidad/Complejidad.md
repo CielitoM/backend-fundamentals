@@ -168,6 +168,42 @@ En general, un algoritmo **O(n log n)** es más eficiente que uno **O(n²)**, es
 - O(n²): burbuja, selección, inserción (ordenamiento lentos).
 - O(n log n): mergesort, heapsort (ordenamiento eficientes).
 
-> 🔍 Incluso si O(n²) puede ser más simple de implementar, **en producción se prioriza la eficiencia y escalabilidad**.
+> Incluso si O(n²) puede ser más simple de implementar, **en producción se prioriza la eficiencia y escalabilidad**.
 
 Siempre que sea posible, **prefiere algoritmos con mejor complejidad asintótica**, especialmente en sistemas con muchos datos o usuarios concurrentes.
+
+## 10. ¿Qué representa la notación Big O y por qué es importante en programación backend?
+
+La **notación Big O** describe el **crecimiento del tiempo o espacio** que requiere un algoritmo en función del tamaño de entrada `n`. Es una forma de analizar la eficiencia algorítmica.
+
+### ¿Por qué es importante?
+- Permite comparar algoritmos de forma teórica.
+- Ayuda a anticipar problemas de rendimiento en sistemas con muchos usuarios o datos.
+- Es clave para tomar decisiones técnicas informadas.
+
+### Ejemplos comunes:
+
+| Complejidad | Nombre           | Ejemplo                          |
+|-------------|------------------|----------------------------------|
+| O(1)        | Constante        | Acceso a un elemento en un array |
+| O(log n)    | Logarítmica      | Búsqueda binaria                 |
+| O(n)        | Lineal           | Recorrer un arreglo              |
+| O(n log n)  | Lineal logarítmica | Mergesort, Quicksort (mejor caso) |
+| O(n²)       | Cuadrática       | Burbujas, selección, inserción   |
+
+### Ejemplo en código:
+
+```python
+# O(n): recorre una lista
+def suma(lista):
+    total = 0
+    for num in lista:
+        total += num
+    return total
+```
+
+### Consideración:
+
+Big O no mide tiempos reales, sino crecimiento relativo. Depende del peor caso (salvo que se aclare lo contrario).
+
+> Dominar Big O permite escribir código más escalable y tomar mejores decisiones en el diseño backend.
