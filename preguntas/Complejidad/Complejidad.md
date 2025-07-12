@@ -207,3 +207,42 @@ def suma(lista):
 Big O no mide tiempos reales, sino crecimiento relativo. Depende del peor caso (salvo que se aclare lo contrario).
 
 > Dominar Big O permite escribir código más escalable y tomar mejores decisiones en el diseño backend.
+
+## 11. ¿Cuál es la complejidad del siguiente código y por qué?
+
+```python
+def buscar_pares(lista):
+    for i in lista:
+        for j in lista:
+            if (i + j) % 2 == 0:
+                print(i, j)
+```
+
+El código tiene dos bucles anidados que recorren la lista completa.
+
+Si la lista tiene n elementos, el número total de combinaciones es n * n → O(n²).
+
+
+### Análisis:
+
+| Línea                 | Operación                         | Complejidad |
+|----------------------|-----------------------------------|-------------|
+| `for i in lista:`    | Recorre `n` elementos             | O(n)        |
+| `for j in lista:`    | Anidado, se ejecuta por cada `i`  | O(n)        |
+| `print(i, j)`        | Operación constante               | O(1)        |
+
+
+→ Complejidad total: O(n²)
+
+### ¿Cómo podría optimizarse?
+
+Si no necesitas combinaciones repetidas ((i,j) y (j,i)), puedes usar for j in lista[i+1:] para reducir a aproximadamente la mitad las iteraciones.
+
+Pero la complejidad seguiría siendo O(n²), solo con un mejor coeficiente.
+
+
+> Saber leer y analizar código te permite anticipar cuellos de botella en tiempo de ejecución.
+
+
+
+
