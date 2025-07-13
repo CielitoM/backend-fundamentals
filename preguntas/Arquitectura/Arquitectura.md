@@ -292,7 +292,7 @@ En una API, el controlador HTTP no contiene lógica de negocio. Solo delega a un
 
 > Clean Architecture permite construir sistemas mantenibles, testeables y resistentes al paso del tiempo.
 
-## 12 ¿Qué es la Arquitectura Hexagonal y cuál es su propósito?
+## 12. ¿Qué es la Arquitectura Hexagonal y cuál es su propósito?
 
 La **Arquitectura Hexagonal** (también llamada **Ports and Adapters**) es un enfoque que busca aislar la lógica del dominio central de las dependencias externas, como bases de datos, servicios web, interfaces gráficas, etc.
 
@@ -335,3 +335,31 @@ Flexibilidad: puedes cambiar adaptadores sin tocar el núcleo.
 Puedes cambiar PostgreSQL por MongoDB sin alterar tu lógica de negocio, solo reemplazando el adaptador correspondiente.
 
 > Esta arquitectura promueve sistemas desacoplados, resistentes al cambio y fácilmente extensibles.
+
+## 13. ¿Qué significa que un servicio sea "sin estado" (stateless) y por qué es importante en arquitectura backend?
+
+Un **servicio sin estado** es aquel que **no guarda información de la sesión del usuario ni de peticiones anteriores** entre una solicitud y otra.
+
+Cada solicitud se maneja de forma **independiente**, como si fuera la primera.
+
+### Ventajas:
+- **Escalabilidad sencilla**: cualquier instancia puede manejar cualquier solicitud.
+- **Tolerancia a fallos**: se puede reiniciar una instancia sin perder contexto.
+- **Facilidad para balanceo de carga**: no se necesita "recordar" a qué servidor fue un usuario.
+
+### Ejemplo:
+
+- En una API RESTful, cada solicitud incluye toda la información necesaria (por ejemplo, el token JWT del usuario), y el servidor no guarda nada entre peticiones.
+
+```http
+GET /perfil
+Authorization: Bearer <token>
+```
+El servidor valida el token, procesa y responde. No necesita recordar qué pasó antes.
+
+Contraste con servicios con estado:
+
+En servicios con estado, el servidor mantiene variables de sesión, lo que complica la escalabilidad y la recuperación ante fallos.
+
+
+> Diseñar servicios sin estado es una de las claves para construir sistemas distribuidos modernos y escalables.
