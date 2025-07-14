@@ -205,4 +205,43 @@ No indexar todo: muchos índices pueden perjudicar el rendimiento general.
 
 > El uso de índices debe balancear velocidad de lectura y costo de mantenimiento en escritura.
 
+## 12. ¿Qué es la normalización en bases de datos y por qué es importante?
+
+La **normalización** es el proceso de organizar las columnas y tablas de una base de datos para **reducir la redundancia de datos y mejorar la integridad**.
+
+### Objetivos:
+- Evitar duplicación de datos.
+- Asegurar dependencias lógicas entre datos.
+- Facilitar el mantenimiento y la consistencia.
+
+### Formas normales más comunes:
+
+| Forma Normal | Requisitos                                                    |
+|--------------|---------------------------------------------------------------|
+| 1NF          | Elimina grupos repetitivos. Cada celda debe tener un solo valor. |
+| 2NF          | Cumple 1NF y elimina dependencias parciales (para claves compuestas). |
+| 3NF          | Cumple 2NF y elimina dependencias transitivas. |
+
+### Ejemplo:
+
+Una tabla no normalizada:
+
+| cliente | dirección       | producto   |
+|---------|------------------|------------|
+| Ana     | Calle 1          | Zapatos    |
+| Ana     | Calle 1          | Camisa     |
+
+→ Está duplicando la dirección.
+
+**Normalizado:**
+
+- `clientes(id, nombre, direccion)`
+- `ventas(id_cliente, producto)`
+
+### ¿Cuándo desnormalizar?
+- En sistemas de lectura intensiva, para rendimiento (OLAP).
+- Cuando se prioriza la velocidad sobre la integridad.
+
+> La normalización mejora la calidad del diseño y facilita evitar errores difíciles de detectar en producción.
+
 
