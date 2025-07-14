@@ -243,6 +243,37 @@ Pero la complejidad seguiría siendo O(n²), solo con un mejor coeficiente.
 
 > Saber leer y analizar código te permite anticipar cuellos de botella en tiempo de ejecución.
 
+## 12. ¿Cuál es la complejidad de las operaciones básicas en un diccionario (hashmap) y por qué?
+
+Los **diccionarios** (también llamados **hashmaps** o **tablas hash**) permiten almacenar y acceder a datos por clave. En la mayoría de los lenguajes modernos (como Python, JavaScript, Java), están implementados con **hash tables**.
+
+### Complejidades comunes:
+
+| Operación         | Complejidad Promedio | Complejidad Peor Caso |
+|-------------------|----------------------|------------------------|
+| Insertar (`put`)  | O(1)                 | O(n) (en caso de colisiones extremas) |
+| Acceder (`get`)   | O(1)                 | O(n)                   |
+| Eliminar (`del`)  | O(1)                 | O(n)                   |
+
+> En la práctica, con buenas funciones de hash y mecanismos de resolución de colisiones, el rendimiento se mantiene cercano a **O(1)**.
+
+### Ejemplo en Python:
+
+```python
+usuarios = {"ana": 25, "juan": 30}
+usuarios["ana"]  # acceso en O(1)
+usuarios["carlos"] = 22  # inserción en O(1)
+```
+
+### Consideraciones:
+
+La eficiencia depende de la función hash y la implementación interna.
+
+En situaciones donde hay muchas colisiones, el rendimiento puede degradarse.
+
+
+> Los diccionarios son una de las estructuras más eficientes para búsquedas, pero no siempre son la mejor opción si se necesita orden o evitar colisiones.
+
 
 
 
