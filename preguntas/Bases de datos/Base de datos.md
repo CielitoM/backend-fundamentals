@@ -244,4 +244,40 @@ Una tabla no normalizada:
 
 > La normalización mejora la calidad del diseño y facilita evitar errores difíciles de detectar en producción.
 
+## 13. ¿Qué es una transacción en una base de datos y qué significan las propiedades ACID?
+
+Una **transacción** es una unidad lógica de trabajo que agrupa una o más operaciones sobre la base de datos. Se asegura que todas esas operaciones se ejecuten completamente o ninguna, manteniendo la coherencia.
+
+### Propiedades ACID:
+
+| Propiedad   | Significado                                                                 |
+|-------------|------------------------------------------------------------------------------|
+| **A**tomicidad  | Todas las operaciones ocurren completamente o ninguna lo hace.            |
+| **C**onsistencia | La base de datos pasa de un estado válido a otro estado válido.          |
+| **I**solamiento  | Las transacciones concurrentes no se interfieren entre sí.               |
+| **D**urabilidad  | Una vez realizada una transacción, los cambios persisten incluso ante fallos. |
+
+### Ejemplo:
+
+```sql
+BEGIN;
+
+UPDATE cuentas SET saldo = saldo - 100 WHERE id = 1;
+UPDATE cuentas SET saldo = saldo + 100 WHERE id = 2;
+
+COMMIT;
+```
+
+Si alguna de las actualizaciones falla, se puede hacer ROLLBACK y los datos no quedan en un estado inconsistente.
+
+### ¿Por qué es importante?
+
+Evita errores como transferencias incompletas.
+
+Garantiza integridad en aplicaciones bancarias, financieras, etc.
+
+Imprescindible en sistemas concurrentes o distribuidos.
+
+
+> Las propiedades ACID son la base de la confiabilidad en los sistemas que usan bases de datos relacionales.
 
