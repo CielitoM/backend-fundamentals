@@ -123,3 +123,30 @@ NGINX, HAProxy, AWS ELB, Traefik.
 
 > El balanceo de carga es clave para crear aplicaciones tolerantes a fallos y escalables.
 
+
+## 8. ¿Cuál es la diferencia entre escalabilidad horizontal y vertical?
+
+La escalabilidad es la capacidad de un sistema para manejar un aumento en la carga de trabajo añadiendo recursos.
+
+Existen dos tipos principales:
+
+| Tipo de escalabilidad | Definición | Ejemplo | Ventajas | Desventajas |
+|------------------------|------------|---------|----------|-------------|
+| **Vertical (Scale Up)** | Añadir más recursos a una sola máquina (CPU, RAM) | Migrar a un servidor más potente | Simplicidad | Límite físico, puede ser costoso |
+| **Horizontal (Scale Out)** | Añadir más máquinas al sistema | Añadir más instancias de servidores detrás de un balanceador de carga | Escalabilidad flexible y distribuida | Requiere coordinación y arquitectura distribuida |
+
+### ¿Cuál es mejor?
+
+Depende del caso:
+
+- Para cargas pequeñas o simples, escalar verticalmente puede ser suficiente.
+- Para sistemas grandes o con alta disponibilidad, escalar horizontalmente es más recomendable.
+
+### Ejemplo práctico:
+
+Supongamos que una API recibe cada vez más peticiones.
+
+- **Escalado vertical:** Aumentar la RAM y CPU del servidor donde corre la API.
+- **Escalado horizontal:** Desplegar 3 instancias de la API y usar un balanceador de carga (como Nginx o AWS ELB).
+
+> En muchos sistemas reales, se usa una combinación de ambos enfoques.
