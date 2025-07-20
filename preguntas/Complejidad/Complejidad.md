@@ -274,6 +274,56 @@ En situaciones donde hay muchas colisiones, el rendimiento puede degradarse.
 
 > Los diccionarios son una de las estructuras más eficientes para búsquedas, pero no siempre son la mejor opción si se necesita orden o evitar colisiones.
 
+## 13 ¿Qué es la complejidad espacial y cómo se diferencia de la complejidad temporal?
+
+La **complejidad espacial** mide cuánta **memoria adicional** necesita un algoritmo para ejecutarse, en función del tamaño de la entrada.
+
+### Comparación:
+
+| Tipo de complejidad | Qué mide                    | Ejemplo de unidad         |
+|---------------------|-----------------------------|---------------------------|
+| Temporal            | Tiempo de ejecución         | Operaciones / pasos       |
+| Espacial            | Memoria utilizada           | Variables, arreglos, etc. |
+
+### Ejemplo simple:
+
+```python
+def suma(lista):
+    total = 0      # O(1)
+    for num in lista:
+        total += num
+    return total
+```
+
+Complejidad temporal: O(n) (por el bucle)
+
+Complejidad espacial: O(1) (solo una variable total)
+
+
+### Ejemplo con mayor uso de memoria:
+
+```python
+def duplicar(lista):
+    nueva = []
+    for x in lista:
+        nueva.append(x * 2)
+    return nueva
+```
+
+Aquí, la complejidad espacial es O(n), porque se crea una nueva lista del mismo tamaño que la original.
+
+
+### ¿Por qué es importante?
+
+En sistemas con memoria limitada (embedded, móviles).
+
+Cuando se procesan grandes volúmenes de datos.
+
+Para optimizar algoritmos más allá del tiempo.
+
+
+> Una solución rápida que consume demasiada memoria puede no ser viable en producción. El equilibrio entre tiempo y espacio es clave.
+
 
 
 
