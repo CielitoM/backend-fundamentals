@@ -150,3 +150,37 @@ Supongamos que una API recibe cada vez más peticiones.
 - **Escalado horizontal:** Desplegar 3 instancias de la API y usar un balanceador de carga (como Nginx o AWS ELB).
 
 > En muchos sistemas reales, se usa una combinación de ambos enfoques.
+
+## 9. ¿Qué es un balanceador de carga (load balancer) y cómo ayuda a escalar un sistema?
+
+Un **balanceador de carga** es un componente que distribuye el tráfico entrante entre múltiples servidores o instancias, mejorando la disponibilidad y escalabilidad del sistema.
+
+### Beneficios: 
+
+| Beneficio | Descripción |
+|-----------|-------------|
+| **Alta disponibilidad** | Si un servidor falla, el tráfico se redirige a los otros |
+| **Distribución de carga** | Evita que un solo servidor se sature |
+| **Escalabilidad horizontal** | Permite añadir o quitar instancias según la demanda |
+| **Mantenimiento sin downtime** | Se pueden actualizar servidores sin afectar al usuario final |
+
+### Tipos de balanceadores:
+
+| Tipo | Descripción |
+|------|-------------|
+| **Round Robin** | Asigna peticiones de forma rotativa |
+| **Least Connections** | Asigna al servidor con menos conexiones activas |
+| **IP Hash** | Asigna en base a la IP del cliente para mantener sesión |
+
+### Ejemplo práctico:
+
+Supongamos que una aplicación web tiene 3 instancias corriendo:
+
+```text
+Usuario → Load Balancer → [API #1, API #2, API #3]
+```
+
+Cuando un usuario hace una petición, el balanceador decide cuál instancia atenderá la solicitud. Esto permite escalar horizontalmente sin que el cliente lo note.
+
+> Un balanceador de carga puede ser hardware (como F5) o software (como Nginx, HAProxy, o balanceadores en la nube como AWS ELB).
+
