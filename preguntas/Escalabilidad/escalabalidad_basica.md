@@ -184,3 +184,29 @@ Cuando un usuario hace una petición, el balanceador decide cuál instancia aten
 
 > Un balanceador de carga puede ser hardware (como F5) o software (como Nginx, HAProxy, o balanceadores en la nube como AWS ELB).
 
+
+## 10. ¿Cuál es la diferencia entre escalado horizontal y escalado vertical?
+
+
+El **escalado horizontal** y el **escalado vertical** son dos estrategias para aumentar la capacidad de un sistema.
+
+### Comparación:
+
+| Característica            | Escalado Vertical                          | Escalado Horizontal                        |
+|--------------------------|--------------------------------------------|--------------------------------------------|
+| Definición              | Aumentar los recursos de una sola máquina | Añadir más máquinas al sistema             |
+| Ejemplo                 | Más CPU/RAM en un servidor                | Más instancias de servidor trabajando en paralelo |
+| Facilidad de implementación | Generalmente más fácil                   | Requiere arquitectura distribuida          |
+| Límite físico           | Limitado por el hardware                  | Escalabilidad más flexible                 |
+| Costos                 | Puede ser más costoso a gran escala       | Costos más predecibles y escalables        |
+
+### Explicación:
+
+- El **escalado vertical** es útil para sistemas monolíticos o cuando no se puede distribuir fácilmente la carga.
+- El **escalado horizontal** es más común en sistemas modernos, especialmente con microservicios o arquitecturas cloud-native.
+
+### Ejemplo:
+
+Una base de datos puede escalar verticalmente aumentando la RAM. Sin embargo, si el sistema es una API con múltiples usuarios, lo ideal es escalar horizontalmente con más réplicas de la API detrás de un balanceador de carga.
+
+> En sistemas grandes, se prefiere escalar horizontalmente para lograr alta disponibilidad y resiliencia.
