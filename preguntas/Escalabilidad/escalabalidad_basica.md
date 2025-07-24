@@ -210,3 +210,27 @@ El **escalado horizontal** y el **escalado vertical** son dos estrategias para a
 Una base de datos puede escalar verticalmente aumentando la RAM. Sin embargo, si el sistema es una API con múltiples usuarios, lo ideal es escalar horizontalmente con más réplicas de la API detrás de un balanceador de carga.
 
 > En sistemas grandes, se prefiere escalar horizontalmente para lograr alta disponibilidad y resiliencia.
+
+
+## 11. ¿Qué es un balanceador de carga y cómo ayuda a escalar una aplicación?
+
+Un **balanceador de carga** (load balancer) es un componente que distribuye el tráfico entrante entre múltiples servidores o instancias de una aplicación. Su objetivo es **optimizar el uso de recursos**, **evitar sobrecarga** en un solo servidor y **aumentar la disponibilidad** del sistema.
+
+### ¿Cómo ayuda a escalar?
+
+- **Escalabilidad horizontal**: Permite agregar más instancias de la aplicación fácilmente. El balanceador distribuye la carga entre ellas.
+- **Alta disponibilidad**: Si una instancia falla, el balanceador puede redirigir las solicitudes a otras que estén funcionando.
+- **Rendimiento**: Reduce los cuellos de botella al distribuir equitativamente las solicitudes.
+
+### Tipos de balanceadores:
+
+| Tipo                     | Descripción                                                                 |
+|--------------------------|-----------------------------------------------------------------------------|
+| Lógica de aplicación (L7) | Decide en función del contenido (por ejemplo, la URL o cabecera)              |
+| Lógica de red (L4)         | Opera a nivel de puertos y protocolos como TCP o UDP                         |
+
+### Ejemplo:
+
+Supongamos que tenés una API con 3 instancias corriendo en contenedores. Un balanceador como NGINX o AWS ELB puede dirigir cada solicitud entrante a una de esas instancias según la carga actual, mejorando el rendimiento global.
+
+> Es una pieza clave para escalar horizontalmente aplicaciones web y backend modernas.
