@@ -234,3 +234,27 @@ Un **balanceador de carga** (load balancer) es un componente que distribuye el t
 Supongamos que tenés una API con 3 instancias corriendo en contenedores. Un balanceador como NGINX o AWS ELB puede dirigir cada solicitud entrante a una de esas instancias según la carga actual, mejorando el rendimiento global.
 
 > Es una pieza clave para escalar horizontalmente aplicaciones web y backend modernas.
+
+
+## 12. ¿Cuál es la diferencia entre escalado horizontal y escalado vertical?
+
+**Escalado horizontal** (scale out) y **escalado vertical** (scale up) son dos estrategias para aumentar la capacidad de una aplicación.
+
+### Comparación:
+
+| Característica            | Escalado Horizontal                              | Escalado Vertical                           |
+|--------------------------|--------------------------------------------------|---------------------------------------------|
+| Definición               | Añadir más máquinas/instancias                   | Añadir más recursos (CPU, RAM) a una máquina|
+| Costo inicial            | Generalmente más costoso al inicio              | Puede ser más económico al principio        |
+| Tolerancia a fallos      | Alta (varias instancias pueden fallar)          | Baja (un solo punto de fallo)               |
+| Complejidad              | Mayor (requiere balanceadores, sincronización)  | Menor (menos infraestructura)               |
+| Ejemplo                  | Añadir más servidores web detrás de un proxy     | Cambiar el servidor por uno más potente     |
+
+### ¿Cuál conviene?
+
+Depende del caso:
+
+- **Sistemas distribuidos**: Prefieren escalado horizontal.
+- **Aplicaciones monolíticas pequeñas**: Pueden escalar verticalmente al principio.
+
+> Una arquitectura moderna suele comenzar con escalado vertical y, al crecer, adopta escalado horizontal para mejorar disponibilidad y rendimiento.
