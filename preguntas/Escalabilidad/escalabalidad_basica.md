@@ -258,3 +258,24 @@ Depende del caso:
 - **Aplicaciones monolíticas pequeñas**: Pueden escalar verticalmente al principio.
 
 > Una arquitectura moderna suele comenzar con escalado vertical y, al crecer, adopta escalado horizontal para mejorar disponibilidad y rendimiento.
+
+
+## 13. ¿Qué es un balanceador de carga y por qué es importante para la escalabilidad?
+
+Un **balanceador de carga** es un componente que distribuye el tráfico de red o las solicitudes de los usuarios entre múltiples servidores. Su objetivo es garantizar que ningún servidor se sobrecargue y que los recursos se utilicen de forma eficiente.
+
+### Importancia para la escalabilidad:
+
+- **Permite el escalado horizontal**: Se pueden añadir más servidores detrás del balanceador sin cambiar la lógica de la aplicación.
+- **Mejora la disponibilidad**: Si un servidor falla, el balanceador redirige el tráfico a los demás.
+- **Optimiza el rendimiento**: Distribuye las solicitudes para evitar cuellos de botella.
+- **Soporta sesiones persistentes** (sticky sessions), si es necesario.
+
+### Tipos de balanceadores:
+
+- **Nivel 4 (Transporte)**: Basado en IP y puertos (TCP/UDP).
+- **Nivel 7 (Aplicación)**: Basado en contenido HTTP, cookies, etc.
+
+- **Nginx**, **HAProxy**, **AWS Elastic Load Balancer (ELB)**, **Cloudflare**, etc.
+
+> En arquitecturas distribuidas modernas, el balanceador de carga es un componente clave para garantizar escalabilidad, rendimiento y tolerancia a fallos.
