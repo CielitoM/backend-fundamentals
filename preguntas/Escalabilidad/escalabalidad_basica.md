@@ -279,3 +279,26 @@ Un **balanceador de carga** es un componente que distribuye el tráfico de red o
 - **Nginx**, **HAProxy**, **AWS Elastic Load Balancer (ELB)**, **Cloudflare**, etc.
 
 > En arquitecturas distribuidas modernas, el balanceador de carga es un componente clave para garantizar escalabilidad, rendimiento y tolerancia a fallos.
+
+
+## 14. ¿Cuál es la diferencia entre escalado vertical y escalado horizontal?
+
+**Escalado vertical (scale-up)** consiste en aumentar la capacidad de un único servidor, por ejemplo:
+
+- Agregar más CPU, memoria RAM o almacenamiento.
+- Es más simple de implementar, pero tiene un límite físico y puede ser costoso.
+- Ejemplo: cambiar una máquina con 4 GB de RAM por una de 16 GB.
+
+**Escalado horizontal (scale-out)** consiste en agregar más servidores al sistema:
+
+- Permite distribuir la carga entre múltiples instancias.
+- Mejora la disponibilidad y la tolerancia a fallos.
+- Es ideal para arquitecturas distribuidas como microservicios.
+- Ejemplo: tener 3 servidores en lugar de uno solo.
+
+### Consideraciones:
+
+- El **escalado horizontal** es más complejo de implementar, requiere balanceadores de carga y sincronización de datos.
+- Las **bases de datos relacionales** suelen escalar verticalmente, mientras que **NoSQL** se presta mejor para escalado horizontal.
+
+>  En sistemas que requieren alta disponibilidad y capacidad de crecimiento, el escalado horizontal suele ser la mejor opción a largo plazo.
