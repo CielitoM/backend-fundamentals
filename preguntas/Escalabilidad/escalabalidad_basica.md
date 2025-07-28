@@ -302,3 +302,26 @@ Un **balanceador de carga** es un componente que distribuye el tráfico de red o
 - Las **bases de datos relacionales** suelen escalar verticalmente, mientras que **NoSQL** se presta mejor para escalado horizontal.
 
 >  En sistemas que requieren alta disponibilidad y capacidad de crecimiento, el escalado horizontal suele ser la mejor opción a largo plazo.
+
+## 15. ¿Cómo medir si un sistema es escalable?
+
+Un sistema es escalable si puede mantener o mejorar su rendimiento cuando aumenta la carga de trabajo, agregando recursos de manera eficiente.
+
+### Para medir la escalabilidad, se pueden considerar varios indicadores:
+
+- **Throughput (rendimiento):** número de peticiones procesadas por segundo.
+- **Tiempo de respuesta (latencia):** cuánto tarda el sistema en responder a una petición.
+- **Uso de recursos:** CPU, memoria, red y almacenamiento a medida que crece la carga.
+- **Costo por rendimiento:** cuánto cuesta mantener cierto nivel de rendimiento al escalar.
+
+### Ejemplo práctico:
+
+Supongamos que un sistema maneja 1000 peticiones/segundo con 2 servidores. Al agregar 2 servidores más:
+
+- Si ahora maneja 2000 peticiones/segundo ⇒ escalabilidad lineal (excelente).
+- Si solo llega a 1300 ⇒ escalabilidad limitada.
+- Si el rendimiento no mejora ⇒ posible cuello de botella o mal diseño.
+
+### Conclusión:
+
+La escalabilidad no solo se trata de agregar recursos, sino de hacerlo de forma **eficiente** y **proporcional** al crecimiento de la carga. Las pruebas de carga y estrés son esenciales para evaluarla correctamente.
