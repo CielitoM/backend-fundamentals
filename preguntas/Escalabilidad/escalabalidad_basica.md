@@ -325,3 +325,30 @@ Supongamos que un sistema maneja 1000 peticiones/segundo con 2 servidores. Al ag
 ### Conclusión:
 
 La escalabilidad no solo se trata de agregar recursos, sino de hacerlo de forma **eficiente** y **proporcional** al crecimiento de la carga. Las pruebas de carga y estrés son esenciales para evaluarla correctamente.
+
+## 16.  ¿Qué estrategias se pueden aplicar para manejar cargas pico en un sistema backend?
+
+Para manejar cargas pico de forma eficiente, se pueden aplicar varias estrategias:
+
+### 1. **Autoescalado (Autoscaling)**
+- Configurar el sistema para que cree o elimine instancias automáticamente según el tráfico.
+- Común en servicios como AWS EC2, Google Cloud Run o Kubernetes.
+
+### 2. **Colas de trabajo (Work Queues)**
+- Desacoplar tareas pesadas (como envío de correos o procesamiento de imágenes) del flujo principal.
+- Herramientas comunes: RabbitMQ, Kafka, Celery.
+
+### 3. **Caching**
+- Usar sistemas de caché (como Redis o Memcached) para reducir la carga en la base de datos o servicios backend.
+- Ideal para respuestas frecuentes o pesadas.
+
+### 4. **CDN (Content Delivery Network)**
+- Distribuir contenido estático (imágenes, scripts, estilos) a través de redes geográficamente distribuidas.
+- Reduce la carga en servidores backend.
+
+### 5. **Rate limiting y control de tráfico**
+- Limitar la cantidad de peticiones por usuario para evitar abusos o DDoS.
+- Puede implementarse en gateways, proxies o servicios API.
+
+### Tip:
+Planificar para cargas pico desde la fase de diseño mejora la disponibilidad y experiencia de usuario, especialmente en eventos importantes (lanzamientos, promociones, etc.).
