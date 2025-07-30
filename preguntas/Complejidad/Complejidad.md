@@ -324,6 +324,24 @@ Para optimizar algoritmos más allá del tiempo.
 
 > Una solución rápida que consume demasiada memoria puede no ser viable en producción. El equilibrio entre tiempo y espacio es clave.
 
+## 14. ¿Cuál es la complejidad temporal de los algoritmos de ordenamiento más comunes?
+
+A continuación se muestra una tabla con la complejidad temporal de algunos algoritmos de ordenamiento conocidos:
+
+| Algoritmo          | Mejor caso       | Promedio         | Peor caso          | Estable |
+|--------------------|------------------|------------------|--------------------|---------|
+| Bubble Sort        | O(n)             | O(n²)            | O(n²)              | Sí      |
+| Insertion Sort     | O(n)             | O(n²)            | O(n²)              | Sí      |
+| Selection Sort     | O(n²)            | O(n²)            | O(n²)              | No      |
+| Merge Sort         | O(n log n)       | O(n log n)       | O(n log n)         | Sí      |
+| Quick Sort         | O(n log n)       | O(n log n)       | O(n²)              | No      |
+| Heap Sort          | O(n log n)       | O(n log n)       | O(n log n)         | No      |
+
+### Tip:
+- **Estabilidad** significa que los elementos con valores iguales mantienen su orden relativo original.
+- QuickSort es muy rápido en la práctica, pero su peor caso puede ser problemático si no se elige bien el pivote.
+- MergeSort es preferido cuando se necesita un algoritmo estable con buen rendimiento garantizado.
+
 
 
 
