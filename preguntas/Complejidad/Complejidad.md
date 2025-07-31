@@ -342,6 +342,21 @@ A continuación se muestra una tabla con la complejidad temporal de algunos algo
 - QuickSort es muy rápido en la práctica, pero su peor caso puede ser problemático si no se elige bien el pivote.
 - MergeSort es preferido cuando se necesita un algoritmo estable con buen rendimiento garantizado.
 
+## 15. ¿Cuál es la complejidad temporal de acceso, inserción y eliminación en distintas estructuras de datos?
 
+
+| Estructura de datos      | Acceso     | Inserción | Eliminación |
+|--------------------------|------------|-----------|-------------|
+| Array (estático)         | O(1)       | O(n)      | O(n)        |
+| Lista enlazada simple    | O(n)       | O(1)      | O(1) (al inicio) |
+| Pila (stack)             | O(n)       | O(1)      | O(1)        |
+| Cola (queue)             | O(n)       | O(1)      | O(1)        |
+| Hash Table               | O(1)       | O(1)      | O(1)        |
+| Árbol binario balanceado (AVL, Red-Black) | O(log n) | O(log n) | O(log n) |
+
+### Tip:
+- El array permite acceso directo (índice), pero no es eficiente para insertar o borrar elementos.
+- Las hash tables ofrecen acceso e inserción promedio en tiempo constante, pero pueden degradarse a O(n) en caso de muchas colisiones.
+- Árboles balanceados garantizan operaciones eficientes incluso en el peor caso.
 
 
