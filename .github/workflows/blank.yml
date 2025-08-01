@@ -1,0 +1,20 @@
+name: List Markdown Files
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  list-markdown:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: List all .md files
+        run: |
+          echo "Archivos Markdown en el repositorio:"
+          find . -name "*.md"
