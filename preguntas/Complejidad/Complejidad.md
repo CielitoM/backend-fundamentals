@@ -359,4 +359,30 @@ A continuación se muestra una tabla con la complejidad temporal de algunos algo
 - Las hash tables ofrecen acceso e inserción promedio en tiempo constante, pero pueden degradarse a O(n) en caso de muchas colisiones.
 - Árboles balanceados garantizan operaciones eficientes incluso en el peor caso.
 
+## 16. ¿Cuál es la complejidad temporal del siguiente algoritmo recursivo?
 
+```python
+def f(n):
+    if n <= 1:
+        return 1
+    return f(n - 1) + f(n - 1)
+```
+
+Este algoritmo llama a f(n-1) dos veces en cada nivel de recursión. Podemos expresar su complejidad como:
+
+T(n) = 2 * T(n - 1) + O(1)
+
+La solución a esta recurrencia es:
+
+T(n) = O(2^n)
+
+### Explicación:
+
+En cada nivel, el número de llamadas se duplica.
+
+La altura del árbol de recursión es n, y hay 2^n llamadas al final.
+
+
+Esta es una recursión exponencial, muy costosa en tiempo.
+
+> Optimización posible: usar memoization o programación dinámica para reducir a O(n).
