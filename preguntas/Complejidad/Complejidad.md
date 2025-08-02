@@ -386,3 +386,39 @@ La altura del árbol de recursión es n, y hay 2^n llamadas al final.
 Esta es una recursión exponencial, muy costosa en tiempo.
 
 > Optimización posible: usar memoization o programación dinámica para reducir a O(n).
+
+
+## 17. Dado un array de enteros, ¿cómo encontrar la subcadena contigua con la suma más alta en el menor tiempo posible?
+
+Ejemplo:
+```python
+nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+```
+
+Este es un problema clásico de optimización conocido como el máximo subarreglo contiguo (Maximum Subarray Problem), resuelto eficientemente con el algoritmo de Kadane.
+
+### Enfoque:
+
+def max_subarray(nums):
+    max_actual = max_total = nums[0]
+    for n in nums[1:]:
+        max_actual = max(n, max_actual + n)
+        max_total = max(max_total, max_actual)
+    return max_total
+
+### Complejidad:
+
+Tiempo: O(n)
+
+Espacio: O(1)
+
+
+### Explicación:
+
+Se recorre el array una sola vez.
+
+Se acumula la suma máxima posible terminando en cada posición.
+
+Si una suma acumulada es menor que el número actual, se reinicia desde allí.
+
+Este algoritmo evita cálculos innecesarios como en la solución de fuerza bruta O(n²).
