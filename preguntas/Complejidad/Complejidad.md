@@ -422,3 +422,33 @@ Se acumula la suma máxima posible terminando en cada posición.
 Si una suma acumulada es menor que el número actual, se reinicia desde allí.
 
 Este algoritmo evita cálculos innecesarios como en la solución de fuerza bruta O(n²).
+
+## 18. ¿Qué significa que un algoritmo tenga complejidad **tiempo lineal** pero **espacio logarítmico**?
+
+Significa que:
+
+- El **tiempo de ejecución** del algoritmo crece proporcionalmente al tamaño de la entrada (O(n)).
+- El **uso de memoria adicional** (espacio auxiliar) crece en proporción al logaritmo del tamaño de la entrada (O(log n)).
+
+### Ejemplo:
+
+```python
+def recursivo_log(n):
+    if n <= 1:
+        return
+    recursivo_log(n // 2)
+
+def linear_scan(arr):
+    for x in arr:
+        print(x)
+```
+
+linear_scan tiene tiempo O(n) y espacio O(1).
+
+recursivo_log tiene tiempo O(log n) y usa O(log n) espacio por la pila de llamadas recursivas.
+
+
+Si combinamos un recorrido lineal con llamadas recursivas logarítmicas, podríamos tener un algoritmo con tiempo O(n) y espacio O(log n).
+
+
+> Una buena comprensión de cómo varían tiempo y espacio según la estrategia (recursión, iteración, estructuras auxiliares) es clave para optimizar software backend eficiente.
