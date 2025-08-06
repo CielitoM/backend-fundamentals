@@ -352,3 +352,5 @@ Para manejar cargas pico de forma eficiente, se pueden aplicar varias estrategia
 
 ### Tip:
 Planificar para cargas pico desde la fase de diseño mejora la disponibilidad y experiencia de usuario, especialmente en eventos importantes (lanzamientos, promociones, etc.).
+
+### 17. ¿Cómo se puede escalar una aplicación web que experimenta cuellos de botella en la base de datos, y qué estrategias específicas podrían aplicarse para lograrlo sin comprometer la consistencia de los datos?
