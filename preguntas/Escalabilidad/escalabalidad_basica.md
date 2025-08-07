@@ -353,4 +353,28 @@ Para manejar cargas pico de forma eficiente, se pueden aplicar varias estrategia
 ### Tip:
 Planificar para cargas pico desde la fase de diseño mejora la disponibilidad y experiencia de usuario, especialmente en eventos importantes (lanzamientos, promociones, etc.).
 
-### 17. ¿Cómo se puede escalar una aplicación web que experimenta cuellos de botella en la base de datos, y qué estrategias específicas podrían aplicarse para lograrlo sin comprometer la consistencia de los datos?
+### 17. ¿Cómo diseñarías un sistema escalable para procesar millones de solicitudes de imágenes por segundo, como lo haría un servicio de red social o CDN?
+
+1. **Desacoplamiento mediante colas de mensajes**
+   - Utilizar sistemas como **Kafka**, **RabbitMQ** o **SQS** para manejar las cargas asincrónicas.
+   - Permite a los productores y consumidores escalar de forma independiente.
+
+2. **Uso de una CDN (Content Delivery Network)**
+   - Servir imágenes desde nodos cercanos al usuario para reducir latencia y carga de servidores principales.
+   - Ejemplos: **Cloudflare**, **Akamai**, **Amazon CloudFront**.
+
+3. **Balanceadores de carga**
+   - Distribuir el tráfico entrante entre múltiples servidores de backend.
+   - Escalado horizontal (agregar más instancias) para manejar más solicitudes.
+
+4. **Procesamiento distribuido y microservicios**
+   - Separar funciones en servicios individuales: redimensionamiento, compresión, filtros, etc.
+   - Escalar cada uno por separado.
+
+5. **Almacenamiento distribuido y caché**
+   - Guardar imágenes en sistemas como **Amazon S3**, **Google Cloud Storage**, o soluciones on-premise como **Ceph**.
+   - Cachear imágenes procesadas usando **Redis**, **Memcached** o CDN edge caches.
+
+6. **Escalado automático**
+   - Implementar autoescalado (horizontal) en función de métricas como uso de CPU, latencia, o tamaño de la cola de mensajes.
+ 
