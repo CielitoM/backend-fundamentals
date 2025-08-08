@@ -452,3 +452,37 @@ Si combinamos un recorrido lineal con llamadas recursivas logarítmicas, podría
 
 
 > Una buena comprensión de cómo varían tiempo y espacio según la estrategia (recursión, iteración, estructuras auxiliares) es clave para optimizar software backend eficiente.
+
+
+## Analiza la complejidad temporal y espacial del siguiente algoritmo, e indica si puede optimizarse: 
+
+```python
+def buscar_suma(lista, objetivo):
+    for i in range(len(lista)):
+        for j in range(len(lista)):
+            if lista[i] + lista[j] == objetivo:
+                return True
+    return False
+``
+
+### 1. Complejidad temporal
+
+El algoritmo usa dos bucles anidados de tamaño n, por lo que:
+
+Tiempo: O(n²) en el peor de los casos.
+
+
+### 2. Complejidad espacial
+
+Usa solo variables auxiliares (i, j), por lo que:
+
+Espacio: O(1).
+
+
+### 3. Posible optimización
+
+Usar una estructura de datos como set para almacenar los elementos ya vistos y verificar complementos en tiempo constante:
+
+Nuevo tiempo: O(n)
+
+Nuevo espacio: O(n)
