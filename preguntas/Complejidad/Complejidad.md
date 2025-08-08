@@ -463,7 +463,7 @@ def buscar_suma(lista, objetivo):
             if lista[i] + lista[j] == objetivo:
                 return True
     return False
-``
+```
 
 ### 1. Complejidad temporal
 
