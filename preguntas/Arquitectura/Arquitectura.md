@@ -363,3 +363,23 @@ En servicios con estado, el servidor mantiene variables de sesión, lo que compl
 
 
 > Diseñar servicios sin estado es una de las claves para construir sistemas distribuidos modernos y escalables.
+
+
+### 14. Explica las diferencias entre una arquitectura monolítica y una arquitectura de microservicios, y menciona un caso de uso en el que elegirías cada una.
+
+1. **Definición:**
+   - **Monolítica:** Toda la aplicación se construye como una sola unidad.  
+   - **Microservicios:** La aplicación se divide en servicios pequeños e independientes que se comunican entre sí.
+
+2. **Ventajas y desventajas:**
+   - **Monolítica:**
+     - Ventajas: Simplicidad inicial, fácil de desplegar.
+     - Desventajas: Difícil de escalar por módulos, cambios afectan a todo el sistema.
+   - **Microservicios:**
+     - Ventajas: Escalabilidad independiente por servicio, facilidad para usar tecnologías distintas.
+     - Desventajas: Complejidad en despliegue, monitoreo y comunicación.
+
+3. **Casos de uso:**
+   - **Monolítica:** Aplicaciones pequeñas o MVPs donde la velocidad de desarrollo inicial es prioritaria.
+   - **Microservicios:** Sistemas grandes y distribuidos que requieren escalabilidad y despliegues independientes.
+
