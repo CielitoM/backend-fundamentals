@@ -486,3 +486,22 @@ Usar una estructura de datos como set para almacenar los elementos ya vistos y v
 Nuevo tiempo: O(n)
 
 Nuevo espacio: O(n)
+
+## 19. Analiza la complejidad temporal y espacial del algoritmo de búsqueda binaria y explica en qué condiciones es más eficiente que la búsqueda lineal.
+
+1. **Complejidad temporal:**
+   - Búsqueda binaria: O(log n) en el mejor, promedio y peor caso.
+   - Búsqueda lineal: O(n) en el peor caso.
+
+2. **Complejidad espacial:**
+   - Búsqueda binaria: O(1) si es iterativa, O(log n) si es recursiva (por el stack).
+   - Búsqueda lineal: O(1).
+
+3. **Condiciones de eficiencia:**
+   - La búsqueda binaria requiere que la colección esté ordenada.
+   - Es más eficiente que la búsqueda lineal cuando el tamaño de la colección es grande y ya está ordenada.
+
+4. **Ejemplo de comparación:**
+   - En una lista ordenada de un millón de elementos:
+     - Búsqueda lineal → hasta 1,000,000 comparaciones.
+     - Búsqueda binaria → máximo ~20 comparaciones.
