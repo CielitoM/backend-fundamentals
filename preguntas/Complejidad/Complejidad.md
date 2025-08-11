@@ -505,3 +505,29 @@ Nuevo espacio: O(n)
    - En una lista ordenada de un millón de elementos:
      - Búsqueda lineal → hasta 1,000,000 comparaciones.
      - Búsqueda binaria → máximo ~20 comparaciones.
+
+## 20. Determina la complejidad temporal y espacial de un algoritmo de ordenamiento por burbuja (Bubble Sort) y compáralo con el de QuickSort. Explica en qué escenarios podría justificarse el uso de Bubble Sort.
+
+1. **Complejidad temporal:**
+   - **Bubble Sort:**
+     - Mejor caso: O(n) (cuando la lista ya está ordenada y se optimiza el algoritmo).
+     - Promedio y peor caso: O(n²).
+   - **QuickSort:**
+     - Mejor y promedio: O(n log n).
+     - Peor caso: O(n²) (cuando siempre se elige un pivote extremo en listas ya ordenadas).
+
+2. **Complejidad espacial:**
+   - **Bubble Sort:** O(1) (in-place).
+   - **QuickSort:** O(log n) por la pila de recursión.
+
+3. **Escenarios donde Bubble Sort puede ser útil:**
+   - Listas muy pequeñas.
+   - Cuando la lista ya está casi ordenada y se usa la versión optimizada.
+   - En entornos educativos para explicar conceptos básicos de ordenamiento.
+
+4. **Ejemplo comparativo:**
+   - Lista de 10,000 elementos aleatorios:
+     - Bubble Sort → ~100,000,000 comparaciones.
+     - QuickSort → ~132,877 comparaciones en promedio.
+
+> Aunque Bubble Sort es ineficiente para grandes volúmenes de datos, su simplicidad y facilidad de implementación lo hacen útil en casos muy específicos.
