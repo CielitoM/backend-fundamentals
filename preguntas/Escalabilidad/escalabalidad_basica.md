@@ -377,4 +377,6 @@ Planificar para cargas pico desde la fase de diseño mejora la disponibilidad y 
 
 6. **Escalado automático**
    - Implementar autoescalado (horizontal) en función de métricas como uso de CPU, latencia, o tamaño de la cola de mensajes.
+
+## 18. 
  
