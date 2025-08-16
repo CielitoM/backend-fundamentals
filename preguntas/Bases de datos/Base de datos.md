@@ -281,4 +281,4 @@ Imprescindible en sistemas concurrentes o distribuidos.
 
 > Las propiedades ACID son la base de la confiabilidad en los sistemas que usan bases de datos relacionales.
 
-## 14. 
+## 14
