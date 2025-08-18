@@ -378,5 +378,31 @@ Planificar para cargas pico desde la fase de diseño mejora la disponibilidad y 
 6. **Escalado automático**
    - Implementar autoescalado (horizontal) en función de métricas como uso de CPU, latencia, o tamaño de la cola de mensajes.
 
-## 18. 
+## 18. Imagina que tu sistema de gestión de mensajería instantánea comienza con **10,000 usuarios activos diarios**, pero se proyecta que en un año tendrá **1 millón de usuarios concurrentes**.  
+
+**Pregunta:**  
+¿Cómo rediseñarías la arquitectura para que pueda **escalar horizontalmente** y soportar esta carga creciente sin degradar el rendimiento?  
+
+- ¿Qué componentes deberían poder replicarse o distribuirse?  
+- ¿Cómo garantizarías el balanceo de carga entre servidores?  
+- ¿Qué mecanismos usarías para mantener la consistencia de datos entre múltiples instancias?  
+
+Para escalar horizontalmente el sistema:  
+
+1. **Componentes replicables/distribuibles:**  
+   - **Servidores de aplicación**: pueden escalarse en múltiples instancias, ejecutándose detrás de un *load balancer*.  
+   - **Servidores de mensajería/chat**: distribuidos en clusters para soportar sesiones simultáneas.  
+   - **Servicios de autenticación**: escalables con cachés distribuidas como **Redis** o **Memcached**.  
+   - **Bases de datos**: partición (sharding) para distribuir la carga, además de réplicas para lectura.  
+
+2. **Balanceo de carga:**  
+   - Uso de un **Load Balancer (NGINX, HAProxy, AWS ELB, etc.)** para distribuir tráfico entre múltiples instancias.  
+   - Estrategia de *sticky sessions* o manejo mediante **tokens JWT** para que los usuarios no dependan de un único servidor.  
+
+3. **Consistencia de datos:**  
+   - **Base de datos distribuida** (ej. PostgreSQL con Citus, MongoDB, Cassandra) para manejar alta concurrencia.  
+   - Uso de **colas de mensajes (Kafka, RabbitMQ)** para coordinar eventos y mantener sincronización.  
+   - **Eventual consistency** para mensajes no críticos y **consistencia fuerte** en operaciones clave (ej. login, entrega confirmada).  
+
+> El sistema debe pasar de una arquitectura monolítica a una **arquitectura distribuida con microservicios** que permita escalar de forma independiente cada componente crítico.
  
