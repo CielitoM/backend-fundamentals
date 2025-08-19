@@ -406,3 +406,4 @@ Para escalar horizontalmente el sistema:
 
 > El sistema debe pasar de una arquitectura monolítica a una **arquitectura distribuida con microservicios** que permita escalar de forma independiente cada componente crítico.
  
+## 19. 
