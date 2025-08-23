@@ -531,3 +531,5 @@ Nuevo espacio: O(n)
      - QuickSort → ~132,877 comparaciones en promedio.
 
 > Aunque Bubble Sort es ineficiente para grandes volúmenes de datos, su simplicidad y facilidad de implementación lo hacen útil en casos muy específicos.
+
+## 20. 
