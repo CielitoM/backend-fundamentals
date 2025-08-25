@@ -406,4 +406,9 @@ Para escalar horizontalmente el sistema:
 
 > El sistema debe pasar de una arquitectura monolítica a una **arquitectura distribuida con microservicios** que permita escalar de forma independiente cada componente crítico.
  
-## 19. 
+## 19. ¿Cómo asegurarías que el sistema pueda manejar un incremento significativo en la cantidad de usuarios sin degradar el rendimiento?  
+Para garantizar la escalabilidad, implementaría una arquitectura basada en **microservicios**, donde cada componente pueda desplegarse y escalarse de manera independiente según la demanda. 
+
+Además, emplearía un **balanceador de carga** para distribuir el tráfico entre múltiples instancias de servidores y utilizaría **bases de datos distribuidas o con particionamiento (sharding)** para evitar cuellos de botella. 
+
+Finalmente, integraría un sistema de **monitorización y autoescalado** que permita añadir recursos automáticamente en picos de carga.
