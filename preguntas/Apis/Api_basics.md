@@ -195,3 +195,5 @@ Retry-After: 60
 }
 ```
 El rate limiting es esencial en APIs públicas o de alto tráfico.
+
+## 10. ¿Qué es el rate limiting y por qué es importante en una API?
