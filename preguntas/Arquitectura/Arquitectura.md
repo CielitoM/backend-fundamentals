@@ -383,4 +383,4 @@ En servicios con estado, el servidor mantiene variables de sesión, lo que compl
    - **Monolítica:** Aplicaciones pequeñas o MVPs donde la velocidad de desarrollo inicial es prioritaria.
    - **Microservicios:** Sistemas grandes y distribuidos que requieren escalabilidad y despliegues independientes.
 
-### 15. 
+### 15
