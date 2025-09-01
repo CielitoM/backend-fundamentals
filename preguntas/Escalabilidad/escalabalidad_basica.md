@@ -412,3 +412,24 @@ Para garantizar la escalabilidad, implementaría una arquitectura basada en **mi
 Además, emplearía un **balanceador de carga** para distribuir el tráfico entre múltiples instancias de servidores y utilizaría **bases de datos distribuidas o con particionamiento (sharding)** para evitar cuellos de botella. 
 
 Finalmente, integraría un sistema de **monitorización y autoescalado** que permita añadir recursos automáticamente en picos de carga.
+
+### 20. Tu aplicación web recibe picos de tráfico muy variables a lo largo del día. ¿Qué estrategias implementarías para escalar dinámicamente y mantener la disponibilidad?
+
+Para manejar picos de tráfico y garantizar la disponibilidad se pueden aplicar las siguientes estrategias:
+
+1. **Escalado automático (autoscaling)**:
+   - Configurar instancias de servidores que se agreguen o eliminen según métricas de CPU, memoria o cantidad de solicitudes.
+
+2. **Uso de caché**:
+   - Implementar cachés en memoria (Redis, Memcached) para reducir consultas a la base de datos y acelerar respuestas.
+
+3. **Balanceo de carga**:
+   - Distribuir las solicitudes entre varias instancias del servidor mediante un balanceador (NGINX, HAProxy, ELB).
+
+4. **Desacoplamiento de servicios**:
+   - Usar colas de mensajes (Kafka, RabbitMQ) para procesar tareas asíncronas y evitar sobrecargar la aplicación principal.
+
+5. **Bases de datos escalables**:
+   - Aplicar replicación para lecturas y particionamiento (sharding) para escrituras intensivas.
+
+> Estas estrategias permiten que el sistema se adapte dinámicamente a la carga, manteniendo tiempos de respuesta bajos y alta disponibilidad.
