@@ -281,4 +281,33 @@ Imprescindible en sistemas concurrentes o distribuidos.
 
 > Las propiedades ACID son la base de la confiabilidad en los sistemas que usan bases de datos relacionales.
 
-## 14
+## 14. Si tu sistema empieza a sufrir problemas de rendimiento debido a que la base de datos recibe demasiadas consultas complejas, ¿qué técnicas podrías aplicar para optimizar el rendimiento?
+
+Para optimizar el rendimiento de una base de datos bajo alta carga de consultas complejas, se pueden aplicar varias técnicas:
+
+1. **Índices eficientes**:
+   - Crear índices en las columnas más consultadas (especialmente en `WHERE`, `JOIN`, y `ORDER BY`).
+   - Usar índices compuestos si varias columnas se consultan juntas.
+
+2. **Normalización y desnormalización**:
+   - Normalizar para reducir redundancias.
+   - Desnormalizar (cuando sea necesario) para acelerar consultas frecuentes.
+
+3. **Optimización de consultas**:
+   - Evitar `SELECT *`.
+   - Reescribir subconsultas en `JOIN` si mejora el rendimiento.
+   - Usar `EXPLAIN` para analizar planes de ejecución.
+
+4. **Caché de consultas**:
+   - Implementar caché en capa de aplicación o en memoria (Redis, Memcached).
+
+5. **Replicación**:
+   - Usar bases de datos esclavas para consultas de solo lectura, aliviando la carga de la principal.
+
+6. **Particionamiento (Sharding o Partitioning)**:
+   - Dividir tablas grandes en fragmentos lógicos o físicos.
+
+7. **Mantenimiento periódico**:
+   - Ejecutar `VACUUM`, `ANALYZE` o equivalentes para limpiar y actualizar estadísticas.
+
+> Estas prácticas ayudan a mantener tiempos de respuesta bajos incluso con un alto volumen de consultas.
