@@ -311,3 +311,25 @@ Para optimizar el rendimiento de una base de datos bajo alta carga de consultas 
    - Ejecutar `VACUUM`, `ANALYZE` o equivalentes para limpiar y actualizar estadísticas.
 
 > Estas prácticas ayudan a mantener tiempos de respuesta bajos incluso con un alto volumen de consultas.
+
+### ¿Qué diferencias existen entre escalado vertical y escalado horizontal en bases de datos, y en qué situaciones conviene cada uno?
+
+- **Escalado vertical (Scale Up)**:
+  - Consiste en aumentar los recursos de un único servidor (más CPU, RAM o almacenamiento).
+  - Es más sencillo de implementar porque no requiere cambios en la aplicación.
+  - Limitaciones: llega un punto en que el hardware no puede crecer más o el costo se vuelve muy alto.
+  - Útil cuando:
+    - La aplicación es pequeña o mediana.
+    - No se requiere disponibilidad muy alta.
+    - Se necesita una solución rápida y directa.
+
+- **Escalado horizontal (Scale Out)**:
+  - Consiste en agregar más servidores o nodos que trabajen en paralelo.
+  - Requiere técnicas como **replicación**, **sharding** o **clustering**.
+  - Proporciona mejor **disponibilidad** y capacidad de crecimiento prácticamente ilimitada.
+  - Útil cuando:
+    - Se manejan grandes volúmenes de datos.
+    - Se busca alta disponibilidad y tolerancia a fallos.
+    - El tráfico de consultas es masivo y concurrente.
+
+> El **escalado vertical** es más fácil pero limitado, mientras que el **horizontal** es más complejo pero permite crecer sin un techo fijo.
