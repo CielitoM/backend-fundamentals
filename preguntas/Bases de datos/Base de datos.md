@@ -312,7 +312,7 @@ Para optimizar el rendimiento de una base de datos bajo alta carga de consultas 
 
 > Estas prácticas ayudan a mantener tiempos de respuesta bajos incluso con un alto volumen de consultas.
 
-### ¿Qué diferencias existen entre escalado vertical y escalado horizontal en bases de datos, y en qué situaciones conviene cada uno?
+### 15. ¿Qué diferencias existen entre escalado vertical y escalado horizontal en bases de datos, y en qué situaciones conviene cada uno?
 
 - **Escalado vertical (Scale Up)**:
   - Consiste en aumentar los recursos de un único servidor (más CPU, RAM o almacenamiento).
@@ -333,3 +333,18 @@ Para optimizar el rendimiento de una base de datos bajo alta carga de consultas 
     - El tráfico de consultas es masivo y concurrente.
 
 > El **escalado vertical** es más fácil pero limitado, mientras que el **horizontal** es más complejo pero permite crecer sin un techo fijo.
+
+
+### 16. ¿Qué es la **normalización** en bases de datos y cuáles son sus principales beneficios?
+
+La **normalización** es el proceso de organizar las tablas y sus relaciones para reducir la redundancia y mejorar la integridad de los datos.  
+Se logra aplicando una serie de **formas normales (1FN, 2FN, 3FN, BCNF, etc.)** que establecen reglas sobre cómo deben estructurarse las tablas.
+
+**Beneficios principales:**
+- **Elimina redundancia de datos:** evita almacenar la misma información en múltiples lugares.
+- **Mejora la integridad:** asegura que los datos sean consistentes y coherentes.
+- **Facilita el mantenimiento:** los cambios se realizan en un solo lugar y se propagan correctamente.
+- **Optimiza el almacenamiento:** se reduce el uso innecesario de espacio.
+- **Favorece la claridad:** el modelo de datos es más lógico y fácil de entender.
+
+> La normalización mejora la calidad y eficiencia de la base de datos, aunque en algunos casos se desnormaliza para optimizar el rendimiento en sistemas de alto volumen de consultas.
