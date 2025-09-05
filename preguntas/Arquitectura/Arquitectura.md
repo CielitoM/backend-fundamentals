@@ -383,4 +383,26 @@ En servicios con estado, el servidor mantiene variables de sesión, lo que compl
    - **Monolítica:** Aplicaciones pequeñas o MVPs donde la velocidad de desarrollo inicial es prioritaria.
    - **Microservicios:** Sistemas grandes y distribuidos que requieren escalabilidad y despliegues independientes.
 
-### 15
+### 16.¿Cuáles son los principios de diseño de una arquitectura orientada a microservicios y cómo ayudan a escalar un sistema?
+
+Los principios clave de microservicios son:
+
+1. **Servicios independientes**:
+   - Cada microservicio implementa una funcionalidad específica y puede desarrollarse, desplegarse y escalarse de manera independiente.
+
+2. **Comunicación ligera**:
+   - Los servicios se comunican mediante protocolos ligeros como HTTP/REST, gRPC o mensajería asíncrona.
+
+3. **Descentralización de datos**:
+   - Cada microservicio puede tener su propia base de datos o almacenamiento, evitando un punto único de fallo y permitiendo escalar por servicio.
+
+4. **Tolerancia a fallos**:
+   - Implementar mecanismos de resiliencia como *circuit breakers*, retries y *timeouts* para que un fallo en un servicio no colapse todo el sistema.
+
+5. **Automatización y despliegue independiente**:
+   - Cada microservicio puede actualizarse y desplegarse sin afectar al resto del sistema.
+
+**Beneficios para la escalabilidad:**
+- Permite **escalar solo los servicios que requieren más recursos**.
+- Facilita la adopción de diferentes tecnologías según el caso de uso.
+- Mejora la disponibilidad y la tolerancia a fallos del sistema completo.
