@@ -406,3 +406,17 @@ Los principios clave de microservicios son:
 - Permite **escalar solo los servicios que requieren más recursos**.
 - Facilita la adopción de diferentes tecnologías según el caso de uso.
 - Mejora la disponibilidad y la tolerancia a fallos del sistema completo.
+
+### 17. ¿Qué es la arquitectura de microservicios y en qué se diferencia de la arquitectura monolítica?
+
+- **Arquitectura monolítica:**
+  - Toda la aplicación se construye como un solo bloque indivisible.
+  - Los módulos comparten la misma base de datos y entorno de ejecución.
+  - **Ventajas:** simplicidad inicial, fácil de desplegar.
+  - **Desventajas:** difícil de escalar por partes, cambios pequeños pueden requerir desplegar toda la aplicación.
+
+- **Arquitectura de microservicios:**
+  - La aplicación se divide en servicios independientes que se comunican entre sí mediante APIs (REST, gRPC, mensajería, etc.).
+  - Cada microservicio puede tener su propia base de datos y ciclo de vida.
+  - **Ventajas:** escalabilidad granular, despliegues independientes, mayor resiliencia.
+  - **Desventajas:** mayor complejidad en la comunicación, monitoreo y orquestación.
