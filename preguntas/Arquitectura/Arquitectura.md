@@ -420,3 +420,24 @@ Los principios clave de microservicios son:
   - Cada microservicio puede tener su propia base de datos y ciclo de vida.
   - **Ventajas:** escalabilidad granular, despliegues independientes, mayor resiliencia.
   - **Desventajas:** mayor complejidad en la comunicación, monitoreo y orquestación.
+
+### 17. ¿Qué es una arquitectura orientada a eventos (Event-Driven Architecture) y cuándo es recomendable usarla?
+
+- **Definición:**
+  - Es un estilo arquitectónico en el que los componentes se comunican entre sí mediante la producción, detección y reacción a eventos.
+  - Los eventos son notificaciones que indican que algo sucedió en el sistema (por ejemplo, "pedido creado", "usuario registrado").
+
+- **Características:**
+  - Usa colas de mensajes o buses de eventos (ej. Kafka, RabbitMQ).
+  - Favorece la **desacoplación** entre productores y consumidores.
+  - Los servicios pueden reaccionar de manera asíncrona a los cambios.
+
+- **Ventajas:**
+  - Escalabilidad y flexibilidad al manejar grandes volúmenes de eventos.
+  - Alta resiliencia: los fallos en un consumidor no bloquean el sistema completo.
+  - Ideal para sistemas distribuidos y en tiempo real.
+
+- **Cuándo usarla:**
+  - En aplicaciones que requieren procesar flujos de datos en tiempo real.
+  - Cuando se busca un sistema altamente escalable y desacoplado.
+  - En arquitecturas de microservicios que necesitan comunicación asíncrona.
