@@ -348,3 +348,21 @@ Se logra aplicando una serie de **formas normales (1FN, 2FN, 3FN, BCNF, etc.)** 
 - **Favorece la claridad:** el modelo de datos es más lógico y fácil de entender.
 
 > La normalización mejora la calidad y eficiencia de la base de datos, aunque en algunos casos se desnormaliza para optimizar el rendimiento en sistemas de alto volumen de consultas.
+
+### 17. ¿Qué es una arquitectura hexagonal (Hexagonal Architecture) y cuáles son sus beneficios?
+
+### Respuesta:
+- **Definición:**
+  - También llamada **Arquitectura de Puertos y Adaptadores**.
+  - Propone separar el núcleo de la aplicación (la lógica de negocio) de los detalles externos (base de datos, interfaces de usuario, APIs, frameworks).
+  - La comunicación se hace a través de **puertos** (interfaces) y **adaptadores** (implementaciones concretas).
+
+- **Beneficios:**
+  - **Independencia tecnológica:** permite cambiar la base de datos, framework o capa de presentación sin modificar la lógica de negocio.
+  - **Testabilidad:** facilita realizar pruebas unitarias del dominio sin depender de infraestructura externa.
+  - **Mantenibilidad y escalabilidad:** al estar desacoplada, la aplicación es más fácil de extender y mantener.
+  - **Flexibilidad:** admite diferentes adaptadores para un mismo puerto (ej. múltiples fuentes de datos).
+
+- **Ejemplo:**
+  - Puerto: interfaz `RepositorioClientes`.
+  - Adaptador: implementación concreta que usa PostgreSQL o MongoDB.
