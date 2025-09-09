@@ -441,3 +441,16 @@ Los principios clave de microservicios son:
   - En aplicaciones que requieren procesar flujos de datos en tiempo real.
   - Cuando se busca un sistema altamente escalable y desacoplado.
   - En arquitecturas de microservicios que necesitan comunicación asíncrona.
+
+### 18. ¿Cuáles son las principales diferencias entre una arquitectura monolítica y una basada en microservicios?  
+
+### Respuesta:
+- **Arquitectura monolítica:**
+  - Toda la aplicación está empaquetada y desplegada como una única unidad.
+  - Las funciones (autenticación, pagos, reportes, etc.) están altamente acopladas.
+  - Escalar implica replicar toda la aplicación, incluso las partes que no lo necesitan.
+  - Más sencilla de desarrollar y desplegar al inicio, pero difícil de mantener en sistemas grandes.
+
+- **Arquitectura de microservicios:**
+  - La aplicación se divide en servicios pequeños, independientes y especializados.
+  - Cada servicio se comunica generalmente mediante **
