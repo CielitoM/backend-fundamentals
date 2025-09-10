@@ -475,3 +475,19 @@ Los principios clave de microservicios son:
 - **Ejemplo:**
   - Evento: `"usuario_registrado"`.
   - Consumidores: enviar email de bienvenida, crear perfil por defecto, registrar métrica en analíticas.
+
+### 20. ¿Qué es el patrón CQRS (Command Query Responsibility Segregation) y qué ventajas ofrece?  
+
+- **Definición:**
+  - CQRS es un patrón arquitectónico que separa las operaciones de **lectura** (Queries) y **escritura** (Commands) en sistemas diferentes.
+  - La idea es que los comandos modifican el estado de la aplicación, mientras que las consultas solo leen información sin modificarla.
+
+- **Ventajas:**
+  - **Escalabilidad:** permite escalar de forma independiente las operaciones de lectura y escritura.
+  - **Optimización:** cada lado (lecturas y escrituras) puede usar diferentes modelos de datos adaptados a su necesidad.
+  - **Claridad y separación de responsabilidades:** facilita entender y mantener el código al separar dos preocupaciones distintas.
+  - **Flexibilidad:** permite integrar con sistemas de **event sourcing** para mantener un historial detallado de cambios.
+
+- **Ejemplo:**
+  - **Comando:** `CrearPedido(clienteId, productos)`.
+  - **Consulta:** `ObtenerHistorialPedidos(clienteId)`.
