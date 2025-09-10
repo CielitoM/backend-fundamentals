@@ -454,3 +454,24 @@ Los principios clave de microservicios son:
 - **Arquitectura de microservicios:**
   - La aplicación se divide en servicios pequeños, independientes y especializados.
   - Cada servicio se comunica generalmente mediante **
+
+### 19. ¿Qué es la arquitectura orientada a eventos (Event-Driven Architecture) y cuándo se recomienda usarla?  
+
+- **Definición:**
+  - Es un estilo de arquitectura donde los componentes se comunican entre sí mediante **eventos**.
+  - Un evento representa un cambio de estado o una acción ocurrida en el sistema (ejemplo: *"pedido creado"*).
+  - Los productores publican eventos y los consumidores reaccionan a ellos de manera asíncrona.
+
+- **Cuándo usarla:**
+  - Cuando se necesita **desacoplar componentes** para que evolucionen de forma independiente.
+  - En sistemas que requieren **alta escalabilidad** y **procesamiento en tiempo real**.
+  - En escenarios donde varias partes del sistema deben reaccionar a un mismo suceso (ejemplo: e-commerce, donde crear un pedido dispara facturación, inventario y notificaciones).
+
+- **Beneficios:**
+  - Alta **desacoplación** entre servicios.
+  - Mejor manejo de **escalabilidad y concurrencia**.
+  - Facilita la extensión del sistema agregando nuevos consumidores sin afectar a los productores.
+
+- **Ejemplo:**
+  - Evento: `"usuario_registrado"`.
+  - Consumidores: enviar email de bienvenida, crear perfil por defecto, registrar métrica en analíticas.
