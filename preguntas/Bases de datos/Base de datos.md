@@ -366,3 +366,21 @@ Se logra aplicando una serie de **formas normales (1FN, 2FN, 3FN, BCNF, etc.)** 
 - **Ejemplo:**
   - Puerto: interfaz `RepositorioClientes`.
   - Adaptador: implementación concreta que usa PostgreSQL o MongoDB.
+
+### 18. ¿Cuál es la diferencia entre índices clustered y non-clustered en una base de datos relacional?  
+
+### Respuesta:
+- **Índice clustered (agrupado):**
+  - Define el orden físico en el que los datos se almacenan en la tabla.
+  - Solo puede haber **uno por tabla**, porque los datos solo pueden ordenarse de una manera.
+  - Las búsquedas en columnas con índice clustered suelen ser más rápidas al recorrer rangos de valores.
+
+- **Índice non-clustered (no agrupado):**
+  - No altera el orden físico de los datos, sino que crea una estructura separada (como una tabla auxiliar con punteros).
+  - Se pueden tener **múltiples por tabla**.
+  - Es útil para búsquedas en columnas que no son claves primarias y para consultas específicas con filtros.
+
+- **Ejemplo:**
+  - En una tabla de usuarios:
+    - Índice clustered → en `id_usuario` (clave primaria).
+    - Índice non-clustered → en `email` para acelerar búsquedas por correo.
