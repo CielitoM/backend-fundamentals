@@ -384,3 +384,20 @@ Se logra aplicando una serie de **formas normales (1FN, 2FN, 3FN, BCNF, etc.)** 
   - En una tabla de usuarios:
     - Índice clustered → en `id_usuario` (clave primaria).
     - Índice non-clustered → en `email` para acelerar búsquedas por correo.
+
+### 19. ¿Qué son las propiedades ACID en una transacción de base de datos y por qué son importantes?  
+
+- **Definición:**
+  - ACID es un conjunto de propiedades que garantizan la fiabilidad en el manejo de transacciones en una base de datos.  
+  - Significa: **Atomicidad, Consistencia, Aislamiento y Durabilidad**.
+
+- **Propiedades:**
+  - **Atomicidad:** todas las operaciones de una transacción se completan o ninguna lo hace.
+  - **Consistencia:** el estado de la base de datos pasa de un estado válido a otro válido después de la transacción.
+  - **Aislamiento:** las transacciones concurrentes no interfieren entre sí; se comportan como si se ejecutaran en serie.
+  - **Durabilidad:** una vez confirmada (commit), la transacción permanece registrada incluso si ocurre una falla del sistema.
+
+- **Importancia:**
+  - Garantizan integridad de los datos.
+  - Evitan corrupción de información en casos de errores, fallas de energía o concurrencia.
+  - Son la base de la confiabilidad en sistemas críticos como banca, reservas o comercio electrónico.
