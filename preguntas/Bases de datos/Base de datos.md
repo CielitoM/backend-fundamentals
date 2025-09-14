@@ -401,3 +401,24 @@ Se logra aplicando una serie de **formas normales (1FN, 2FN, 3FN, BCNF, etc.)** 
   - Garantizan integridad de los datos.
   - Evitan corrupción de información en casos de errores, fallas de energía o concurrencia.
   - Son la base de la confiabilidad en sistemas críticos como banca, reservas o comercio electrónico.
+
+### 20. ¿Qué es la normalización en bases de datos y cuáles son sus principales formas normales?  
+
+- **Definición:**
+  - La normalización es el proceso de organizar los datos en una base de datos relacional para reducir la redundancia y mejorar la integridad.
+  - Se logra dividiendo tablas grandes en tablas más pequeñas y estableciendo relaciones entre ellas.
+
+- **Principales formas normales:**
+  - **Primera Forma Normal (1FN):**
+    - Elimina grupos repetidos y asegura que cada campo contenga solo valores atómicos.
+  - **Segunda Forma Normal (2FN):**
+    - Cumple con 1FN y asegura que todos los atributos dependan completamente de la clave primaria.
+  - **Tercera Forma Normal (3FN):**
+    - Cumple con 2FN y elimina dependencias transitivas (atributos que dependen de otros atributos no clave).
+  - **Forma Normal de Boyce-Codd (BCNF):**
+    - Variante más estricta de la 3FN, que maneja ciertos casos especiales de dependencias.
+
+- **Importancia:**
+  - Mejora la coherencia y consistencia de los datos.
+  - Facilita el mantenimiento y reduce la duplicación.
+  - Aunque puede impactar el rendimiento en consultas complejas, ayuda a tener bases de datos más limpias y confiables.
