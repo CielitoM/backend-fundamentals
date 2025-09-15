@@ -196,4 +196,22 @@ Retry-After: 60
 ```
 El rate limiting es esencial en APIs públicas o de alto tráfico.
 
-## 10. ¿Qué es el rate limiting y por qué es importante en una API?
+## 10. ¿Cuál es la diferencia entre REST y GraphQL al diseñar APIs?  
+
+- **REST (Representational State Transfer):**
+  - Se basa en recursos accesibles a través de endpoints únicos (`/usuarios`, `/productos`).
+  - Usa métodos HTTP estándar: **GET, POST, PUT, DELETE**.
+  - La respuesta suele incluir todos los campos definidos para el recurso.
+  - Ventaja: simplicidad, estandarización y gran adopción.
+  - Desventaja: puede enviar más datos de los necesarios (overfetching) o requerir múltiples peticiones (underfetching).
+
+- **GraphQL:**
+  - Proporciona un solo endpoint para todas las operaciones.
+  - El cliente define exactamente qué datos necesita mediante consultas.
+  - Ventaja: eficiencia en el uso de datos y flexibilidad.
+  - Desventaja: mayor complejidad en el servidor y curva de aprendizaje más alta.
+
+- **Ejemplo:**
+  - REST → `GET /usuarios/1` devuelve todos los campos del usuario.
+  - GraphQL → permite pedir solo `nombre` y `email` de `usuario(id: 1)`.
+
