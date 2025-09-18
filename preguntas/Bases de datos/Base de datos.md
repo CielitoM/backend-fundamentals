@@ -402,7 +402,7 @@ Se logra aplicando una serie de **formas normales (1FN, 2FN, 3FN, BCNF, etc.)** 
   - Evitan corrupción de información en casos de errores, fallas de energía o concurrencia.
   - Son la base de la confiabilidad en sistemas críticos como banca, reservas o comercio electrónico.
 
-### 20. ¿Qué es la normalización en bases de datos y cuáles son sus principales formas normales?  
+### 20. ¿Qué es la normalización en bases de datos y cuáles son sus principales formas normales?
 
 - **Definición:**
   - La normalización es el proceso de organizar los datos en una base de datos relacional para reducir la redundancia y mejorar la integridad.
