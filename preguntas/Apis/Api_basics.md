@@ -215,3 +215,19 @@ El rate limiting es esencial en APIs públicas o de alto tráfico.
   - REST → `GET /usuarios/1` devuelve todos los campos del usuario.
   - GraphQL → permite pedir solo `nombre` y `email` de `usuario(id: 1)`.
 
+### 11. ¿Cuál es la diferencia entre autenticación y autorización en el contexto de APIs?  
+
+### Respuesta:
+- **Autenticación (Authentication):**
+  - Proceso de verificar la identidad del usuario o cliente que hace la petición.
+  - Responde a la pregunta: **“¿Quién eres?”**
+  - Ejemplos: usuario/contraseña, tokens JWT, API keys, OAuth.
+
+- **Autorización (Authorization):**
+  - Proceso de determinar qué acciones o recursos puede acceder un usuario autenticado.
+  - Responde a la pregunta: **“¿Qué puedes hacer?”**
+  - Ejemplos: permisos para leer datos, crear registros, eliminar recursos.
+
+- **Ejemplo práctico:**
+  - Un usuario inicia sesión en una API de comercio electrónico con JWT (**autenticación**).
+  - El sistema valida que ese usuario solo pueda ver su historial de pedidos, no el de otros clientes (**autorización**).
