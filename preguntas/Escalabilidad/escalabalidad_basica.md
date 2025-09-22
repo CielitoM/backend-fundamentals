@@ -432,4 +432,4 @@ Para manejar picos de tráfico y garantizar la disponibilidad se pueden aplicar 
 5. **Bases de datos escalables**:
    - Aplicar replicación para lecturas y particionamiento (sharding) para escrituras intensivas.
 
-> Estas estrategias permiten que el sistema se adapte dinámicamente a la carga, manteniendo tiempos de respuesta bajos y alta disponibilidad.
+> Estas estrategias permiten que el sistema se adapte dinámicamente a la carga, manteniendo tiempos de respuesta bajos y alta disponibilidad
