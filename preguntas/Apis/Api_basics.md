@@ -231,3 +231,5 @@ El rate limiting es esencial en APIs públicas o de alto tráfico.
 - **Ejemplo práctico:**
   - Un usuario inicia sesión en una API de comercio electrónico con JWT (**autenticación**).
   - El sistema valida que ese usuario solo pueda ver su historial de pedidos, no el de otros clientes (**autorización**).
+
+### 12
