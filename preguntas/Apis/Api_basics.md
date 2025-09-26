@@ -1,4 +1,4 @@
-# Preguntas básicas sobre APIs
+# Preguntas básicas sobre APIs.
 
 ## 1. ¿Qué es una API REST y cuáles son sus principales características?
 
