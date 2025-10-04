@@ -1,4 +1,4 @@
-# Pr..eguntas sobre Complejidad Algorítmica (Big O)
+# Preguntas sobre Complejidad Algorítmica (Big O)
 
 ---
 
