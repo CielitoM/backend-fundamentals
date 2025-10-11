@@ -1,4 +1,4 @@
-# 20 preguntas sobre Bases de Datos.
+# 20 preguntas sobre Bases de Datos
 
 ## 1. ¿Qué es una transacción en bases de datos y qué significa que sea ACID?
 
